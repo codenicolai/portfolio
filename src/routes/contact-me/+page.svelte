@@ -9,7 +9,7 @@
   <p class="detail-date">October 2, 2025</p>
   <div class="detail-layout">
     <div class="detail-image">
-      <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=700&q=80" alt="Contact me" />
+        <img src="/github_photo.png" alt="Contact me" />
     </div>
     <div class="detail-content">
       <p>From handles to hosting — I'm reachable in a few places. Whether it's about work, collaboration, or just something interesting you'd like to share.</p>
