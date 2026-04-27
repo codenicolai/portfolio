@@ -1,10 +1,14 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <main class="blog-container">
   <section class="blog-title">
     <h2>nicolaileo</h2>
   </section>
 
   <section class="blog-item">
-    <a href="/thoughts" class="blog-link">
+    <a href="{base}/thoughts" class="blog-link">
       <h2>Thoughts</h2>
       <div class="blog-date">April 2, 2026</div>
       <p>Tech, leadership, and things worth writing down.</p>
@@ -12,14 +16,14 @@
   </section>
 
   <!-- <section class="blog-item">
-    <a href="/posts-and-thoughts" class="blog-link">
+    <a href="{base}/posts-and-thoughts" class="blog-link">
       <h2>Posts and Thoughts</h2>
       <div class="blog-date">January 18, 2026</div>
       <p>Formats over apps.</p>
     </a>
   </section> -->
   <section class="blog-item">
-    <a href="/skills" class="blog-link">
+    <a href="{base}/skills" class="blog-link">
       <h2>Skills</h2>
       <div class="blog-date">January 18, 2026</div>
       <p>7+ years shipping products.</p>
@@ -27,21 +31,21 @@
   </section>
   
   <section class="blog-item">
-    <a href="/projects" class="blog-link">
+    <a href="{base}/projects" class="blog-link">
       <h2>Projects</h2>
       <div class="blog-date">November 11, 2025</div>
       <p>Work and personal builds.</p>
     </a>
   </section>
   <section class="blog-item">
-    <a href="/events-and-workshops" class="blog-link">
+    <a href="{base}/events-and-workshops" class="blog-link">
       <h2>Events and Workshops</h2>
       <div class="blog-date">October 21, 2025</div>
       <p>The challenges of development...</p>
     </a>
   </section>
   <section class="blog-item">
-    <a href="/contact-me" class="blog-link">
+    <a href="{base}/contact-me" class="blog-link">
       <h2>Contact me</h2>
       <div class="blog-date">October 2, 2025</div>
       <p>Be in contact.</p>

@@ -6,5 +6,8 @@ export default {
 			pages: "build",
 			assets: "build",
 		}),
+		paths: {
+			base: "/portfolio",
+		},
 	},
 };

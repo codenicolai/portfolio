@@ -1,5 +1,9 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <main class="detail-container">
-  <a href="/" class="back-link">
+  <a href="{base}/" class="back-link">
     <svg class="back-icon" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/>
     </svg>
@@ -9,7 +13,7 @@
   <h1 class="detail-title">Thoughts</h1>
   <p class="detail-subtitle">Notes on tech, React, and the job.</p>
 
-  <a href="/thoughts/tech-lead" class="post-item">
+  <a href="{base}/thoughts/tech-lead" class="post-item">
     <span class="post-tag">Leadership</span>
     <h2 class="post-title">Becoming a tech lead when you were just writing code</h2>
     <p class="post-date">April 2, 2026</p>
@@ -17,7 +21,7 @@
 
   <div class="divider"></div>
 
-  <a href="/thoughts/barrel-files" class="post-item">
+  <a href="{base}/thoughts/barrel-files" class="post-item">
     <span class="post-tag">React</span>
     <h2 class="post-title">The hidden cost of barrel files</h2>
     <p class="post-date">January 14, 2026</p>
@@ -25,7 +29,7 @@
 
   <div class="divider"></div>
 
-  <a href="/thoughts/memoization-react" class="post-item">
+  <a href="{base}/thoughts/memoization-react" class="post-item">
     <span class="post-tag">React</span>
     <h2 class="post-title">Memoization in React: when it helps and when it just adds noise</h2>
     <p class="post-date">October 30, 2025</p>
@@ -33,7 +37,7 @@
 
   <div class="divider"></div>
 
-  <a href="/thoughts/react-news" class="post-item">
+  <a href="{base}/thoughts/react-news" class="post-item">
     <span class="post-tag">React · News</span>
     <h2 class="post-title">What's actually changed in React lately</h2>
     <p class="post-date">March 18, 2025</p>

@@ -1,5 +1,9 @@
+<script>
+  import { base } from '$app/paths';
+</script>
+
 <main class="detail-container">
-  <a href="/" class="back-link">
+  <a href="{base}/" class="back-link">
     <svg class="back-icon" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/>
     </svg>
@@ -18,7 +22,7 @@
     <p class="body-text">Attended TDC Innovation in Florianópolis, one of the largest developer conferences in Brazil. The experience was a great opportunity to reconnect with the dev community and exchange ideas with engineers across different stacks and companies.</p>
 
     <figure class="photo">
-      <img src="/TDC_1.JPG" alt="TDC Innovation — talk in progress" />
+      <img src="{base}/TDC_1.JPG" alt="TDC Innovation — talk in progress" />
       <figcaption>Talk in progress at #THEDEVCONF</figcaption>
     </figure>
 
@@ -26,7 +30,7 @@
     <p class="body-text">Being in the room with people who are genuinely passionate about the craft is always energizing. The conversations between talks are often more valuable than the talks themselves.</p>
 
     <figure class="photo">
-      <img src="/TDC_2.JPG" alt="TDC Innovation — Premium badge" />
+      <img src="{base}/TDC_2.JPG" alt="TDC Innovation — Premium badge" />
       <figcaption>Leonardo Nicolai  #THEDEVCONF</figcaption>
     </figure>
   </section>
