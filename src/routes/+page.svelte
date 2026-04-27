@@ -4,31 +4,33 @@
   </section>
 
   <section class="blog-item">
+    <a href="/thoughts" class="blog-link">
+      <h2>Thoughts</h2>
+      <div class="blog-date">April 2, 2026</div>
+      <p>Tech, leadership, and things worth writing down.</p>
+    </a>
+  </section>
+
+  <!-- <section class="blog-item">
     <a href="/posts-and-thoughts" class="blog-link">
       <h2>Posts and Thoughts</h2>
       <div class="blog-date">January 18, 2026</div>
       <p>Formats over apps.</p>
     </a>
-  </section>
+  </section> -->
   <section class="blog-item">
     <a href="/skills" class="blog-link">
       <h2>Skills</h2>
       <div class="blog-date">January 18, 2026</div>
-      <p>6+ years shipping products.</p>
+      <p>7+ years shipping products.</p>
     </a>
   </section>
+  
   <section class="blog-item">
-    <a href="/my-portfolio" class="blog-link">
-      <h2>My Portfolio</h2>
-      <div class="blog-date">December 19, 2025</div>
-      <p>My new hobby project.</p>
-    </a>
-  </section>
-  <section class="blog-item">
-    <a href="/side-projects" class="blog-link">
-      <h2>Side projects</h2>
+    <a href="/projects" class="blog-link">
+      <h2>Projects</h2>
       <div class="blog-date">November 11, 2025</div>
-      <p>I'm looking for a new job.</p>
+      <p>Work and personal builds.</p>
     </a>
   </section>
   <section class="blog-item">

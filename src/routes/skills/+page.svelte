@@ -14,17 +14,21 @@
       <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=700&q=80" alt="Skills" />
     </div>
     <div class="detail-content">
-      <p class="intro">Software engineer with 6+ years of experience building scalable products, leading teams, and shipping quality front-end and full-stack applications.</p>
+      <p class="intro">Software engineer with 8+ years of experience building scalable products, leading teams, and shipping quality front-end and full-stack applications.</p>
 
       <div class="skills-group">
         <h3 class="group-label">Frontend</h3>
         <div class="tags">
           <span class="tag">React.js</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Electron</span>
           <span class="tag">TypeScript</span>
           <span class="tag">JavaScript</span>
+          <span class="tag">Svelte</span>
           <span class="tag">CSS / SASS</span>
           <span class="tag">HTML5</span>
           <span class="tag">Bootstrap</span>
+           <span class="tag">Zustand</span>
           <span class="tag">Responsive Design</span>
         </div>
       </div>
@@ -36,7 +40,8 @@
           <span class="tag">GraphQL</span>
           <span class="tag">Apollo GraphQL</span>
           <span class="tag">REST APIs</span>
-          <span class="tag">Zustand</span>
+          <span class="tag">Flask</span>
+         
         </div>
       </div>
 
@@ -49,7 +54,9 @@
           <span class="tag">Cucumber</span>
           <span class="tag">Linux</span>
           <span class="tag">Scrum / Agile</span>
-          <span class="tag">Copilot</span>
+          <span class="tag">AI Agents</span>
+          <span class="tag">LLM's</span>
+         
         </div>
       </div>
 
@@ -76,11 +83,7 @@
             <span class="role">Technical Lead</span>
             <span class="period">Jun 2022 – Present · Remote</span>
           </div>
-          <ul class="timeline-list">
-            <li>Led a team to define and build scalable, stable products from the ground up.</li>
-            <li>Built AI tools integrations — translation, transcription, and content summarization.</li>
-            <li>Designed features handling large datasets with high performance requirements.</li>
-          </ul>
+          <p class="timeline-desc">Led frontend architecture and team delivery. Built AI integrations for translation, transcription, and summarization, and designed features handling large-scale datasets.</p>
         </div>
       </div>
 
@@ -92,27 +95,7 @@
             <span class="role">Software Engineer</span>
             <span class="period">Nov 2020 – Jun 2022 · Florianópolis, Brazil</span>
           </div>
-          <ul class="timeline-list">
-            <li>Maintained and updated a real-time WebSocket integration for a home security system.</li>
-            <li>Helped define new feature structures and system design.</li>
-            <li>Built a UI component library to standardize code and improve performance.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-body">
-          <div class="timeline-header">
-            <span class="company">FluxBeer</span>
-            <span class="role">Software Engineer</span>
-            <span class="period">Aug 2020 – Nov 2020 · Dois Vizinhos, Brazil</span>
-          </div>
-          <ul class="timeline-list">
-            <li>Designed and implemented dashboards for machine monitoring and control.</li>
-            <li>Integrated real-time data visualization and interaction features.</li>
-            <li>Optimized UI components for performance and scalability.</li>
-          </ul>
+          <p class="timeline-desc">Maintained real-time WebSocket systems for a monitoring platform and built a UI component library to standardize code across applications.</p>
         </div>
       </div>
 
@@ -124,11 +107,7 @@
             <span class="role">Software Engineer</span>
             <span class="period">Apr 2020 – Aug 2020 · Remote</span>
           </div>
-          <ul class="timeline-list">
-            <li>Defined and set up the initial tech stack for the project.</li>
-            <li>Developed and integrated CRUD operations with GraphQL APIs.</li>
-            <li>Enabled seamless handling of media uploads and management.</li>
-          </ul>
+          <p class="timeline-desc">Set up the initial tech stack and developed CRUD features integrated with GraphQL APIs, including media upload handling.</p>
         </div>
       </div>
 
@@ -140,11 +119,7 @@
             <span class="role">Software Engineer</span>
             <span class="period">Feb 2019 – Apr 2020 · Dois Vizinhos, Brazil</span>
           </div>
-          <ul class="timeline-list">
-            <li>Contributed to a component library to standardize the UI.</li>
-            <li>Developed and integrated features with backend APIs.</li>
-            <li>Ensured code quality through integration testing.</li>
-          </ul>
+          <p class="timeline-desc">Contributed to a UI component library and integrated backend APIs, with a focus on code quality through integration testing.</p>
         </div>
       </div>
 
@@ -154,13 +129,9 @@
           <div class="timeline-header">
             <span class="company">Codengage</span>
             <span class="role">Intern</span>
-            <span class="period">Oct 2018 – Feb 2019 · Dois Vizinhos, Brazil</span>
+            <span class="period">Oct 2018 – Feb 2020 · Dois Vizinhos, Brazil</span>
           </div>
-          <ul class="timeline-list">
-            <li>Helped build and standardize a PWA UI.</li>
-            <li>Added a GraphQL integration to an existing API.</li>
-            <li>Wrote unit and integration tests.</li>
-          </ul>
+          <p class="timeline-desc">Helped build a PWA UI, added a GraphQL integration to an existing API, and wrote unit and integration tests.</p>
         </div>
       </div>
     </div>
