@@ -27,7 +27,7 @@
 
     <figure class="photo">
       <img src="/TDC_2.JPG" alt="TDC Innovation — Premium badge" />
-      <figcaption>Premium attendee — Leonardo Nicolai Padilha · #THEDEVCONF</figcaption>
+      <figcaption>Leonardo Nicolai  #THEDEVCONF</figcaption>
     </figure>
   </section>
 </main>

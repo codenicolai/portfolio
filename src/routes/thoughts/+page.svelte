@@ -75,12 +75,17 @@
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.25rem;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.post-item:hover {
+  transform: scale(1.01);
+  cursor: pointer;
 }
 .post-item:hover .post-title {
-  color: var(--color-accent);
+  text-decoration: underline;
 }
 
 .post-tag {
@@ -99,7 +104,6 @@
   color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.4;
-  transition: color 0.2s;
 }
 
 .post-date {

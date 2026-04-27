@@ -37,14 +37,14 @@
     <a href="/events-and-workshops" class="blog-link">
       <h2>Events and Workshops</h2>
       <div class="blog-date">October 21, 2025</div>
-      <p>The joys of vibecoding.</p>
+      <p>The challenges of development...</p>
     </a>
   </section>
   <section class="blog-item">
     <a href="/contact-me" class="blog-link">
       <h2>Contact me</h2>
       <div class="blog-date">October 2, 2025</div>
-      <p>From handles to hosting.</p>
+      <p>Be in contact.</p>
     </a>
   </section>
 </main>

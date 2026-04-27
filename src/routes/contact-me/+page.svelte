@@ -12,8 +12,8 @@
         <img src="/github_photo.png" alt="Contact me" />
     </div>
     <div class="detail-content">
-      <p>From handles to hosting — I'm reachable in a few places. Whether it's about work, collaboration, or just something interesting you'd like to share.</p>
-      <p>The best way to reach me is via GitHub or email. I try to respond to everything, just not always immediately.</p>
+      <p>Frontend engineer with 7+ years building products people actually use. I work mostly in React, care a lot about performance and good UI, and have been integrating AI tools into real workflows long enough to know when it helps and when it's just hype.</p>
+      <p>If something on this site resonated — or if you're working on something interesting — I'm easy to reach.</p>
       <a href="https://github.com/codenicolai" class="contact-link" target="_blank" rel="noopener noreferrer">
         <svg class="contact-icon" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"/>
