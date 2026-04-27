@@ -5,15 +5,17 @@
     </svg>
     back
   </a>
-  <h1 class="detail-title">Side Projects</h1>
-  <p class="detail-date">November 11, 2025</p>
+  <h1 class="detail-title">Contact me</h1>
+  <p class="detail-date">October 2, 2025</p>
   <div class="detail-layout">
     <div class="detail-image">
-      <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=700&q=80" alt="Side Projects" />
+      <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=700&q=80" alt="Contact me" />
     </div>
     <div class="detail-content">
-      <p>Things I build outside of work — experiments, small tools, and ideas that don't fit anywhere else. Some ship, some don't, all of them teach me something.</p>
-      <p>Currently exploring automation, CLI tools, and anything that scratches a real itch. These projects tell a lot about how I think and what I care about.</p>
+      <p>From handles to hosting — I'm reachable in a few places. Whether it's about work, collaboration, or just something interesting you'd like to share.</p>
+      <p>The best way to reach me is via GitHub or email. I try to respond to everything, just not always immediately.</p>
+      <a href="https://github.com/codenicolai" class="contact-link" target="_blank" rel="noopener noreferrer">→ github.com/codenicolai</a>
+      <a href="mailto:nicolaileo@outlook.com" class="contact-link">→ nicolaileo@outlook.com</a>
     </div>
   </div>
 </main>
@@ -31,4 +33,6 @@
 .detail-image img { width: 100%; height: 320px; object-fit: cover; border-radius: 14px; display: block; box-shadow: 0 4px 24px var(--color-img-shadow); }
 .detail-content { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
 .detail-content p { font-family: "Montserrat", sans-serif; font-size: 1rem; color: var(--color-text-secondary); line-height: 1.75; margin: 0; }
+.contact-link { font-family: "Montserrat", sans-serif; font-size: 0.95rem; font-weight: 600; color: #8028f3; text-decoration: none; }
+.contact-link:hover { text-decoration: underline; }
 </style>

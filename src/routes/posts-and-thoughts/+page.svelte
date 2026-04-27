@@ -5,15 +5,15 @@
     </svg>
     back
   </a>
-  <h1 class="detail-title">Side Projects</h1>
-  <p class="detail-date">November 11, 2025</p>
+  <h1 class="detail-title">Posts and Thoughts</h1>
+  <p class="detail-date">January 18, 2026</p>
   <div class="detail-layout">
     <div class="detail-image">
-      <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=700&q=80" alt="Side Projects" />
+      <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&q=80" alt="Posts and Thoughts" />
     </div>
     <div class="detail-content">
-      <p>Things I build outside of work — experiments, small tools, and ideas that don't fit anywhere else. Some ship, some don't, all of them teach me something.</p>
-      <p>Currently exploring automation, CLI tools, and anything that scratches a real itch. These projects tell a lot about how I think and what I care about.</p>
+      <p>A space for raw ideas, half-baked theories, and things I've been thinking about lately. Formats over apps — I believe in writing that outlasts the tools used to create it.</p>
+      <p>Here you'll find notes on software, design, productivity, and whatever else catches my attention. No strict editorial calendar, just honest writing.</p>
     </div>
   </div>
 </main>

@@ -5,15 +5,15 @@
     </svg>
     back
   </a>
-  <h1 class="detail-title">Side Projects</h1>
-  <p class="detail-date">November 11, 2025</p>
+  <h1 class="detail-title">Events and Workshops</h1>
+  <p class="detail-date">October 21, 2025</p>
   <div class="detail-layout">
     <div class="detail-image">
-      <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=700&q=80" alt="Side Projects" />
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80" alt="Events and Workshops" />
     </div>
     <div class="detail-content">
-      <p>Things I build outside of work — experiments, small tools, and ideas that don't fit anywhere else. Some ship, some don't, all of them teach me something.</p>
-      <p>Currently exploring automation, CLI tools, and anything that scratches a real itch. These projects tell a lot about how I think and what I care about.</p>
+      <p>Talks I've attended, workshops I've participated in, and communities I've been part of. Learning in public is one of the most effective ways to grow.</p>
+      <p>The joys of vibecoding and the people you meet along the way. If you're organizing something interesting, I'd love to know about it.</p>
     </div>
   </div>
 </main>

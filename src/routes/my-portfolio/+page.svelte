@@ -5,15 +5,15 @@
     </svg>
     back
   </a>
-  <h1 class="detail-title">Side Projects</h1>
-  <p class="detail-date">November 11, 2025</p>
+  <h1 class="detail-title">My Portfolio</h1>
+  <p class="detail-date">December 19, 2025</p>
   <div class="detail-layout">
     <div class="detail-image">
-      <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=700&q=80" alt="Side Projects" />
+      <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80" alt="My Portfolio" />
     </div>
     <div class="detail-content">
-      <p>Things I build outside of work — experiments, small tools, and ideas that don't fit anywhere else. Some ship, some don't, all of them teach me something.</p>
-      <p>Currently exploring automation, CLI tools, and anything that scratches a real itch. These projects tell a lot about how I think and what I care about.</p>
+      <p>This site is itself a project. A place to document work, thinking, and things worth sharing — built with SvelteKit and kept intentionally minimal.</p>
+      <p>No templates, no themes — just code and content, updated as things evolve. A portfolio that grows as I do.</p>
     </div>
   </div>
 </main>
