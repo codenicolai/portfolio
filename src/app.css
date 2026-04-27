@@ -1,45 +1,47 @@
 /* Light mode (default) */
 :root {
-  --color-bg: #f8f8f8;
-  --color-text: #333333;
-  --color-text-secondary: #454545;
-  --color-text-muted: #888888;
-  --color-border: #e0e0e0;
-  --color-shadow: rgba(0, 0, 0, 0.05);
-  --color-tag-bg: #ede8fb;
-  --color-tag-text: #6320c4;
-  --color-avatar-bg: #ffffff;
-  --color-toggle-bg: #ebebeb;
-  --color-toggle-hover: #dcdcdc;
-  --color-item-hover: rgba(128, 40, 243, 0.04);
-  --color-img-shadow: rgba(128, 40, 243, 0.08);
-  --color-timeline-dot: #8028f3;
-  --color-timeline-line: #e0e0e0;
+	--color-bg: #f8f8f8;
+	--color-text: #333333;
+	--color-text-secondary: #454545;
+	--color-text-muted: #888888;
+	--color-border: #e0e0e0;
+	--color-shadow: rgba(0, 0, 0, 0.05);
+	--color-tag-bg: #ede8fb;
+	--color-tag-text: #6320c4;
+	--color-avatar-bg: #ffffff;
+	--color-toggle-bg: #ebebeb;
+	--color-toggle-hover: #dcdcdc;
+	--color-item-hover: rgba(128, 40, 243, 0.04);
+	--color-img-shadow: rgba(128, 40, 243, 0.08);
+	--color-accent: #7331d5;
+	--color-accent-to: #954af6;
+	--color-accent-subtle: rgba(128, 40, 243, 0.06);
 }
 
 /* Dark mode — Pantone 432 C (#404B54) */
 [data-theme="dark"] {
-  --color-bg: #404B54;
-  --color-text: #E8EAF0;
-  --color-text-secondary: #C8CDD6;
-  --color-text-muted: #8FA0AE;
-  --color-border: #515f6b;
-  --color-shadow: rgba(0, 0, 0, 0.25);
-  --color-tag-bg: rgba(145, 141, 252, 0.18);
-  --color-tag-text: #c4bfff;
-  --color-avatar-bg: #4a5660;
-  --color-toggle-bg: #515f6b;
-  --color-toggle-hover: #5e6e7a;
-  --color-item-hover: rgba(145, 141, 252, 0.08);
-  --color-img-shadow: rgba(0, 0, 0, 0.3);
-  --color-timeline-dot: #918dfc;
-  --color-timeline-line: #515f6b;
+	--color-bg: #404b54;
+	--color-text: #e8eaf0;
+	--color-text-secondary: #c8cdd6;
+	--color-text-muted: #8fa0ae;
+	--color-border: #515f6b;
+	--color-shadow: rgba(0, 0, 0, 0.25);
+	--color-tag-bg: rgba(145, 141, 252, 0.18);
+	--color-tag-text: #c4bfff;
+	--color-avatar-bg: #4a5660;
+	--color-toggle-bg: #515f6b;
+	--color-toggle-hover: #5e6e7a;
+	--color-item-hover: rgba(145, 141, 252, 0.08);
+	--color-img-shadow: rgba(0, 0, 0, 0.3);
+	--color-accent: #918dfc;
+	--color-accent-to: #c4bfff;
+	--color-accent-subtle: rgba(145, 141, 252, 0.12);
 }
 
 body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  transition: background-color 0.25s ease, color 0.25s ease;
+	margin: 0;
+	font-family: "Montserrat", sans-serif;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	transition: background-color 0.25s ease, color 0.25s ease;
 }
