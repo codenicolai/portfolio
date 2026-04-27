@@ -8,34 +8,46 @@
   <section class="blog-title"> <h2>nicolaileo</h2></section>
    
    <section class="blog-item">
-    <h2>Posts and Tougths</h2>
-    <div class="blog-date">January 18, 2026</div>
-    <p>Formats over apps.</p>
+    <a href="/posts-and-thoughts" class="blog-link">
+      <h2>Posts and Tougths</h2>
+      <div class="blog-date">January 18, 2026</div>
+      <p>Formats over apps.</p>
+    </a>
   </section>
   <section class="blog-item">
-    <h2>Skills</h2>
-    <div class="blog-date">January 18, 2026</div>
-    <p>Formats over apps.</p>
+    <a href="/skills" class="blog-link">
+      <h2>Skills</h2>
+      <div class="blog-date">January 18, 2026</div>
+      <p>Formats over apps.</p>
+    </a>
   </section>
   <section class="blog-item">
-    <h2>My Portfolio</h2>
-    <div class="blog-date">December 19, 2025</div>
-    <p>My new hobby project.</p>
+    <a href="/my-portfolio" class="blog-link">
+      <h2>My Portfolio</h2>
+      <div class="blog-date">December 19, 2025</div>
+      <p>My new hobby project.</p>
+    </a>
   </section>
   <section class="blog-item">
-    <h2>Side projects</h2>
-    <div class="blog-date">November 11, 2025</div>
-    <p>I'm looking for a new job.</p>
+    <a href="/side-projects" class="blog-link">
+      <h2>Side projects</h2>
+      <div class="blog-date">November 11, 2025</div>
+      <p>I'm looking for a new job.</p>
+    </a>
   </section>
   <section class="blog-item">
-    <h2>Events and Workshops</h2>
-    <div class="blog-date">October 21, 2025</div>
-    <p>The joys of vibecoding.</p>
+    <a href="/events-and-workshops" class="blog-link">
+      <h2>Events and Workshops</h2>
+      <div class="blog-date">October 21, 2025</div>
+      <p>The joys of vibecoding.</p>
+    </a>
   </section>
   <section class="blog-item">
-    <h2>Contact me</h2>
-    <div class="blog-date">October 2, 2025</div>
-    <p>From handles to hosting.</p>
+    <a href="/contact-me" class="blog-link">
+      <h2>Contact me</h2>
+      <div class="blog-date">October 2, 2025</div>
+      <p>From handles to hosting.</p>
+    </a>
   </section>
 </main>
 
@@ -141,5 +153,14 @@ font-family: "Montserrat", sans-serif;
 
 p {
     margin: 0;
+}
+
+.blog-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.blog-link:hover h2 {
+  text-decoration: underline;
 }
 </style>
