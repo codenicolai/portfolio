@@ -75,7 +75,7 @@
   text-align: left;
   margin: 0 0 1rem 0;
   font-size: 1.3rem;
-  background: linear-gradient(90deg, #8028f3 0%, #918dfc 30%);
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-to) 40%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -88,13 +88,12 @@
   width: 100%;
   box-sizing: border-box;
   text-align: left;
-  transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1), background 0.2s;
+  transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1);
   will-change: transform;
 }
 .blog-item:hover {
   cursor: pointer;
-  transform: scale(1.01) translateY(0);
-  background: var(--color-item-hover);
+  transform: scale(1.01);
   z-index: 2;
 }
 

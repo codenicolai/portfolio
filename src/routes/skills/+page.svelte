@@ -217,9 +217,9 @@
   align-self: flex-start;
 }
 .back-link:hover {
-  color: #8028f3;
-  border-color: #8028f3;
-  background: rgba(128, 40, 243, 0.06);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-subtle);
 }
 .back-icon {
   width: 12px;
@@ -234,7 +234,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0 0 0.3rem 0;
-  background: linear-gradient(90deg, #8028f3 0%, #918dfc 60%);
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-to) 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -328,13 +328,13 @@
   top: 14px;
   bottom: 0;
   width: 1px;
-  background: var(--color-timeline-line);
+  background: var(--color-border);
 }
 .timeline-dot {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: var(--color-timeline-dot);
+  background: var(--color-accent);
   flex-shrink: 0;
   margin-top: 4px;
   position: relative;
