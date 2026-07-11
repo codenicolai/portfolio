@@ -162,7 +162,7 @@
 
 <style>
 .detail-container {
-  width: 60vw;
+  width: 40vw;
   margin: 2rem auto 4rem auto;
   display: flex;
   flex-direction: column;

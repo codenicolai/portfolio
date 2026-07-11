@@ -41,7 +41,7 @@
 </main>
 
 <style>
-.detail-container { width: 60vw; margin: 2rem auto 4rem auto; display: flex; flex-direction: column; }
+.detail-container { width: 40vw; margin: 2rem auto 4rem auto; display: flex; flex-direction: column; }
 @media (max-width: 768px) { .detail-container { width: 88vw; } .detail-layout { flex-direction: column; } .detail-image img { width: 100%; height: 220px; } }
 .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "Montserrat", sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); text-decoration: none; padding: 0.38rem 0.85rem 0.38rem 0.6rem; border-radius: 999px; border: 1px solid var(--color-border); background: transparent; transition: color 0.2s, border-color 0.2s, background 0.2s; margin-bottom: 1.5rem; align-self: flex-start; }
 .back-link:hover { color: var(--color-accent); border-color: var(--color-accent); background: var(--color-accent-subtle); }
