@@ -81,13 +81,38 @@
       <li>AI integration for real-time transcription, summarization, and translation</li>
       <li>Meeting assistant with AI listening and live chat interaction</li>
       <li>Full video call system integration alongside AI and chat layers</li>
+      <li>Built a PDF-to-assembly generation feature, auto-extracting shareholder meeting data</li>
     </ul>
-    <p class="highlight">End-to-end integration of AI into real-time collaborative environments.</p>
+    <p class="highlight">70% faster registration for complex assemblies, by automating assembly creation from PDF documents.</p>
   </article>
 
   <div class="divider"></div>
 
   <!-- 4 -->
+  <article class="project">
+    <div class="project-top">
+      <div>
+        <span class="project-tag">Performance · Frontend</span>
+        <h2 class="project-name">Atlas Governance — Frontend Performance</h2>
+        <p class="project-desc">Bundle size audit and cleanup for the platform's core Vite application, targeting load performance.</p>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">React</span>
+      <span class="tag">Vite</span>
+      <span class="tag">Performance</span>
+    </div>
+    <ul class="contributions">
+      <li>Audited and removed barrel-file re-exports across the codebase</li>
+      <li>Re-structured module imports to enable proper tree-shaking</li>
+      <li>Validated gains with bundle analysis before and after the change</li>
+    </ul>
+    <p class="highlight">50% smaller production bundle after removing barrel files.</p>
+  </article>
+
+  <div class="divider"></div>
+
+  <!-- 6 -->
   <article class="project">
     <div class="project-top">
       <div>
@@ -111,32 +136,54 @@
 
   <div class="divider"></div>
 
-  <!-- 5 -->
+  <!-- 7 -->
   <article class="project">
     <div class="project-top">
       <div>
         <span class="project-tag">Performance · Data</span>
         <h2 class="project-name">Atlas Governance — Large-Scale CSV Handling</h2>
-        <p class="project-desc">Feature built to handle and render datasets exceeding 500k rows, directly in the browser without crashing or degrading the user experience.</p>
+        <p class="project-desc">Frontend that makes datasets exceeding 500k rows viewable in real time, directly in the browser, without crashing or degrading the user experience.</p>
       </div>
     </div>
     <div class="tags">
       <span class="tag">React</span>
-      <span class="tag">Virtualization</span>
+      <span class="tag">Infinite Scroll</span>
       <span class="tag">CSV parsing</span>
     </div>
     <ul class="contributions">
-      <li>Implemented virtual rendering to handle 500k+ row datasets</li>
+      <li>Built infinite scroll and dynamic loading to render 500k+ row datasets</li>
       <li>Optimized parsing and state management to avoid UI blocking</li>
       <li>Maintained smooth interaction under continuous data load</li>
     </ul>
-    <p class="highlight">Pushing the browser's limits with large data — performance as a feature.</p>
+    <p class="highlight">500K-row dataset made browsable through infinite scroll and dynamic loading.</p>
+  </article>
+
+  <div class="divider"></div>
+
+  <!-- 8 -->
+  <article class="project">
+    <div class="project-top">
+      <div>
+        <span class="project-tag">Personal · Mobile</span>
+        <h2 class="project-name">Personal Finance App</h2>
+        <p class="project-desc">Personal project for tracking personal income, expenses, and budgets.</p>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">Flutter</span>
+      <span class="tag">Dart</span>
+    </div>
+    <ul class="contributions">
+      <li>Income, expense, and budget tracking in a single mobile app</li>
+      <li>Built end-to-end as a personal project, from design to release</li>
+    </ul>
+    <p class="highlight">First personal project built with Flutter, outside of the usual JS/TS stack.</p>
   </article>
 </main>
 
 <style>
 .detail-container {
-  width: 60vw;
+  width: 40vw;
   margin: 2rem auto 4rem auto;
   display: flex;
   flex-direction: column;

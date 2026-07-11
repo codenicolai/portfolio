@@ -8,6 +8,7 @@ export default {
 		}),
 		paths: {
 			base: "/portfolio",
+			relative: false,
 		},
 	},
 };
