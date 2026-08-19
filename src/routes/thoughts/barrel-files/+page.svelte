@@ -1,5 +1,5 @@
 <script>
-  import { base } from '$app/paths';
+import { base } from "$app/paths";
 </script>
 
 <main class="detail-container">
@@ -14,10 +14,10 @@
   <h1 class="post-title">The hidden cost of barrel files</h1>
   <p class="post-date">January 14, 2026</p>
 
-  <p class="post-body">Barrel files — those <code>index.ts</code> files that re-export everything from a folder — feel like a convenience. One import instead of five, paths that read cleanly, no hunting through the filesystem. But what looks like organization often becomes a bundling problem in disguise.</p>
-  <p class="post-body">The issue is that bundlers have to parse the entire barrel to determine what's actually used. Even with tree-shaking, circular dependencies can form silently, and in large codebases, import chains grow deep. The result: slower cold starts, larger initial bundles, and module evaluation happening earlier than needed. I've seen build times spike noticeably after a team standardized on barrels without thinking about the consequences.</p>
-  <p class="post-body">A concrete example: working on a mid-size dashboard with several feature-heavy modules, I opened Chrome's Network tab during a cold page load and counted over 1,600 module requests. Not all of them were barrel-caused, but after auditing the import chains and switching to direct imports across the feature folders — keeping barrels only at the design system boundary — requests settled between 900 and 1,100 depending on the route. Vite's build time dropped too, a few seconds shaved off a CI step that was already too slow. The change was unglamorous. Nobody noticed. That's how good infrastructure work tends to feel.</p>
-  <p class="post-body">The practical advice is simple: favor direct imports for anything performance-sensitive, and reserve barrels for genuine public APIs — the surface of a library or a shared design system, not every subfolder of a feature. A small discipline that pays off quietly over time.</p>
+  <p class="post-body">I used to love barrel files. Those <code>index.ts</code> files that re-export everything from a folder, so you get one tidy import instead of five. No digging through the filesystem to find the right path. What's not to like? Turns out plenty, once a codebase grows past "small."</p>
+  <p class="post-body">The problem is bundlers have to parse the whole barrel to figure out what's actually being used. Tree-shaking helps, but not as much as people assume. Circular dependencies sneak in quietly, import chains get deep, and modules start evaluating way earlier than they need to. I watched a team's build times creep up for weeks before anyone connected it to the barrels they'd standardized on.</p>
+  <p class="post-body">On one dashboard project I was debugging, I opened the Network tab on a cold load out of curiosity and counted over 1,600 module requests. Sixteen hundred. Not all of that was barrels, but after I went through and switched the feature folders to direct imports, keeping barrels only around the design system, it settled down to somewhere between 900 and 1,100 depending on the route. Vite's build got a few seconds faster too. Nobody on the team really noticed the change, which is honestly how you know infrastructure work went well.</p>
+  <p class="post-body">My rule now: direct imports for anything performance-sensitive, barrels only for things that are genuinely public, a library's surface, a shared design system. Not every folder that happens to have more than one file in it.</p>
 </main>
 
 <style>
@@ -31,7 +31,11 @@
 @media (max-width: 900px) { .detail-container { width: 88vw; } }
 
 .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "Montserrat", sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); text-decoration: none; padding: 0.38rem 0.85rem 0.38rem 0.6rem; border-radius: 999px; border: 1px solid var(--color-border); background: transparent; transition: color 0.2s, border-color 0.2s, background 0.2s; margin-bottom: 0.5rem; align-self: flex-start; }
-.back-link:hover { color: var(--color-accent); border-color: var(--color-accent); background: var(--color-accent-subtle); }
+.back-link:hover {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background: var(--color-tag-bg);
+}
 .back-icon { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
 
 .post-tag {
@@ -40,7 +44,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--color-ruby);
 }
 
 .post-title {
@@ -49,11 +53,7 @@
   font-weight: 700;
   margin: 0;
   line-height: 1.3;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-to) 60%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-text);
 }
 
 .post-date {

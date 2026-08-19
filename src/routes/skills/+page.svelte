@@ -1,5 +1,67 @@
 <script>
-  import { base } from '$app/paths';
+import { base } from "$app/paths";
+import { skillIcons } from "$lib/skillIcons.js";
+
+const skillGroups = [
+	{
+		label: "Main Stack",
+		skills: [
+			{ name: "React", icon: "react", flag: null },
+			{ name: "Next.js", icon: "nextjs", flag: null },
+			{ name: "TypeScript", icon: "typescript", flag: null },
+			{ name: "Node.js", icon: "nodejs", flag: null },
+		],
+	},
+	{
+		label: "Frontend",
+		skills: [
+			{ name: "React Native", icon: "react", flag: null },
+			{ name: "Electron", icon: "electron", flag: null },
+			{ name: "Svelte", icon: "svelte", flag: null },
+			{ name: "Zustand", icon: "zustand", flag: null },
+		],
+	},
+	{
+		label: "Backend & APIs",
+		skills: [
+			{ name: "Nest.js", icon: "nestjs", flag: null },
+			{ name: "GraphQL", icon: "graphql", flag: null },
+			{ name: "Apollo GraphQL", icon: "apollographql", flag: null },
+			{ name: "REST APIs", icon: "restapis", flag: null },
+			{ name: "Flask", icon: "flask", flag: null },
+		],
+	},
+	{
+		label: "Infrastructure & Systems",
+		skills: [
+			{ name: "Docker", icon: "docker", flag: null },
+			{ name: "Kubernetes", icon: "kubernetes", flag: null },
+			{ name: "Kafka", icon: "kafka", flag: null },
+			{ name: "Redis", icon: "redis", flag: null },
+			{ name: "System Design", icon: "systemdesign", flag: null },
+		],
+	},
+	{
+		label: "Tools & Practices",
+		skills: [
+			{ name: "Git / GitHub", icon: "github", flag: null },
+			{ name: "Vite", icon: "vite", flag: null },
+			{ name: "Cypress", icon: "cypress", flag: null },
+			{ name: "Cucumber", icon: "cucumber", flag: null },
+			{ name: "Linux", icon: "linux", flag: null },
+			{ name: "Scrum / Agile", icon: "agile", flag: null },
+			{ name: "AI Agents", icon: "aiagents", flag: null },
+			{ name: "LLM's", icon: "llms", flag: null },
+		],
+	},
+	{
+		label: "Languages",
+		skills: [
+			{ name: "Portuguese — Native", icon: null, flag: "🇧🇷" },
+			{ name: "English — Fluent", icon: null, flag: "🇺🇸" },
+		],
+	},
+];
 </script>
 
 <main class="detail-container">
@@ -11,135 +73,28 @@
   </a>
 
   <h1 class="detail-title">Skills</h1>
-  <p class="detail-date">January 18, 2026</p>
 
-  <div class="detail-layout">
-    <div class="detail-image">
-      <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=700&q=80" alt="Skills" />
-    </div>
-    <div class="detail-content">
-      <p class="intro">Software engineer with 8+ years of experience building scalable products, leading teams, and shipping quality front-end and full-stack applications.</p>
+  <div class="detail-content">
+    <p class="intro">Software engineer with 7+ years of experience building scalable fullstack products, from React frontends to Node.js/Express APIs and Prisma-backed databases. Leads a team of 6 as Technical Lead.</p>
 
+    {#each skillGroups as group}
       <div class="skills-group">
-        <h3 class="group-label">Frontend</h3>
+        <h3 class="group-label">{group.label}</h3>
         <div class="tags">
-          <span class="tag">React.js</span>
-          <span class="tag">React Native</span>
-          <span class="tag">Electron</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Svelte</span>
-          <span class="tag">CSS / SASS</span>
-          <span class="tag">HTML5</span>
-          <span class="tag">Bootstrap</span>
-           <span class="tag">Zustand</span>
-          <span class="tag">Responsive Design</span>
+          {#each group.skills as skill}
+            <span class="tag">
+              {#if skill.flag}
+                <span class="tag-icon tag-flag">{skill.flag}</span>
+              {:else if skill.icon}
+                <span class="tag-icon" class:tag-icon-colorful={group.label === 'Main Stack'} data-icon={skill.icon}>{@html skillIcons[skill.icon]}</span>
+              {/if}
+              {skill.name}
+            </span>
+          {/each}
         </div>
       </div>
-
-      <div class="skills-group">
-        <h3 class="group-label">Backend & APIs</h3>
-        <div class="tags">
-          <span class="tag">Node.js</span>
-          <span class="tag">GraphQL</span>
-          <span class="tag">Apollo GraphQL</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">Flask</span>
-         
-        </div>
-      </div>
-
-      <div class="skills-group">
-        <h3 class="group-label">Tools & Practices</h3>
-        <div class="tags">
-          <span class="tag">Git / GitHub</span>
-          <span class="tag">Vite</span>
-          <span class="tag">Cypress</span>
-          <span class="tag">Cucumber</span>
-          <span class="tag">Linux</span>
-          <span class="tag">Scrum / Agile</span>
-          <span class="tag">AI Agents</span>
-          <span class="tag">LLM's</span>
-         
-        </div>
-      </div>
-
-      <div class="skills-group">
-        <h3 class="group-label">Languages</h3>
-        <div class="tags">
-          <span class="tag">Portuguese — Native</span>
-          <span class="tag">English — Fluent</span>
-        </div>
-      </div>
-    </div>
+    {/each}
   </div>
-
-  <!-- Experience -->
-  <section class="section">
-    <h2 class="section-title">Experience</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-body">
-          <div class="timeline-header">
-            <span class="company">Atlas Governance</span>
-            <span class="role">Technical Lead</span>
-            <span class="period">Jun 2022 – Present · Remote</span>
-          </div>
-          <p class="timeline-desc">Led frontend architecture and team delivery. Built AI integrations for translation, transcription, and summarization, and designed features handling large-scale datasets.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-body">
-          <div class="timeline-header">
-            <span class="company">Porter Group</span>
-            <span class="role">Software Engineer</span>
-            <span class="period">Nov 2020 – Jun 2022 · Florianópolis, Brazil</span>
-          </div>
-          <p class="timeline-desc">Maintained real-time WebSocket systems for a monitoring platform and built a UI component library to standardize code across applications.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-body">
-          <div class="timeline-header">
-            <span class="company">Sanar</span>
-            <span class="role">Software Engineer</span>
-            <span class="period">Apr 2020 – Aug 2020 · Remote</span>
-          </div>
-          <p class="timeline-desc">Set up the initial tech stack and developed CRUD features integrated with GraphQL APIs, including media upload handling.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-body">
-          <div class="timeline-header">
-            <span class="company">Sponte</span>
-            <span class="role">Software Engineer</span>
-            <span class="period">Feb 2019 – Apr 2020 · Dois Vizinhos, Brazil</span>
-          </div>
-          <p class="timeline-desc">Contributed to a UI component library and integrated backend APIs, with a focus on code quality through integration testing.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-body">
-          <div class="timeline-header">
-            <span class="company">Codengage</span>
-            <span class="role">Intern</span>
-            <span class="period">Oct 2018 – Feb 2020 · Dois Vizinhos, Brazil</span>
-          </div>
-          <p class="timeline-desc">Helped build a PWA UI, added a GraphQL integration to an existing API, and wrote unit and integration tests.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Education -->
   <section class="section">
@@ -153,7 +108,6 @@
             <span class="role">Bachelor's Degree in Computer Science</span>
             <span class="period">Jan 2015 – Dec 2020 · Dois Vizinhos, Brazil</span>
           </div>
-          <p class="timeline-desc">Involved in a Junior Company Project as part of the curriculum, contributing to real-world software development, project management, and team collaboration.</p>
         </div>
       </div>
     </div>
@@ -169,8 +123,6 @@
 }
 @media (max-width: 768px) {
   .detail-container { width: 88vw; }
-  .detail-layout { flex-direction: column; }
-  .detail-image img { width: 100%; height: 220px; }
 }
 
 /* Back button */
@@ -192,9 +144,9 @@
   align-self: flex-start;
 }
 .back-link:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-  background: var(--color-accent-subtle);
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background: var(--color-tag-bg);
 }
 .back-icon {
   width: 12px;
@@ -208,41 +160,15 @@
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 0.3rem 0;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-to) 60%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-.detail-date {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
   margin: 0 0 2rem 0;
+  color: var(--color-text);
 }
 
-/* Two-column layout */
-.detail-layout {
-  display: flex;
-  gap: 2.5rem;
-  align-items: flex-start;
-  margin-bottom: 3rem;
-}
-.detail-image { flex: 0 0 40%; }
-.detail-image img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 14px;
-  display: block;
-  box-shadow: 0 4px 24px var(--color-img-shadow);
-}
 .detail-content {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  margin-bottom: 3rem;
 }
 .intro {
   font-family: "Montserrat", sans-serif;
@@ -265,13 +191,38 @@
 }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: "Montserrat", sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   background: var(--color-tag-bg);
   color: var(--color-tag-text);
   border-radius: 999px;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+}
+.tag-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+.tag-icon :global(svg) {
+  width: 100%;
+  height: 100%;
+}
+.tag-icon-colorful[data-icon="react"] { color: #61dafb; }
+.tag-icon-colorful[data-icon="nextjs"] { color: var(--color-text); }
+.tag-icon-colorful[data-icon="typescript"] { color: #3178c6; }
+.tag-icon-colorful[data-icon="nodejs"] { color: #539e43; }
+.tag-icon-colorful[data-icon="python"] { color: #ffd43b; }
+.tag-flag {
+  font-size: 0.85rem;
+  line-height: 1;
 }
 
 /* Sections */
@@ -309,7 +260,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-ruby);
   flex-shrink: 0;
   margin-top: 4px;
   position: relative;
@@ -341,25 +292,5 @@
   font-size: 0.78rem;
   color: var(--color-text-muted);
   margin-left: auto;
-}
-.timeline-list {
-  margin: 0;
-  padding-left: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-.timeline-list li {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-}
-.timeline-desc {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-  margin: 0;
 }
 </style>
