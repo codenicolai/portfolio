@@ -6,11 +6,15 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#f8f8f8" />
 		<script>
 			try {
 				const saved = localStorage.getItem('theme');
 				const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-				document.documentElement.setAttribute('data-theme', saved || preferred);
+				const theme = saved || preferred;
+				document.documentElement.setAttribute('data-theme', theme);
+				const meta = document.querySelector('meta[name="theme-color"]');
+				if (meta) meta.setAttribute('content', theme === 'dark' ? '#404b54' : '#f8f8f8');
 			} catch(e) {}
 		</script>
 		%sveltekit.head%

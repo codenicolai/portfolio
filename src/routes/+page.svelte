@@ -1,10 +1,10 @@
 <script>
-  import { base } from '$app/paths';
+import { base } from "$app/paths";
 </script>
 
 <main class="blog-container">
   <section class="blog-title">
-    <h2>nicolaileo</h2>
+    <h2>.nicolaileo</h2>
   </section>
 
   <section class="blog-item">
@@ -15,39 +15,34 @@
     </a>
   </section>
 
-  <!-- <section class="blog-item">
-    <a href="{base}/posts-and-thoughts" class="blog-link">
-      <h2>Posts and Thoughts</h2>
-      <div class="blog-date">January 18, 2026</div>
-      <p>Formats over apps.</p>
-    </a>
-  </section> -->
   <section class="blog-item">
     <a href="{base}/skills" class="blog-link">
       <h2>Skills</h2>
-      <div class="blog-date">January 18, 2026</div>
-      <p>7+ years shipping products.</p>
+      <p>React, Next.js, TypeScript, Node.js.</p>
     </a>
   </section>
   
   <section class="blog-item">
     <a href="{base}/projects" class="blog-link">
       <h2>Projects</h2>
-      <div class="blog-date">November 11, 2025</div>
       <p>Work and personal builds.</p>
     </a>
   </section>
   <section class="blog-item">
-    <a href="{base}/events-and-workshops" class="blog-link">
-      <h2>Events and Workshops</h2>
-      <div class="blog-date">October 21, 2025</div>
-      <p>The challenges of development...</p>
+    <a href="{base}/achievements" class="blog-link">
+      <h2>Achievements</h2>
+      <p>Numbers behind the work.</p>
+    </a>
+  </section>
+  <section class="blog-item">
+    <a href="{base}/career-and-xp" class="blog-link">
+      <h2>Career &amp; XP</h2>
+      <p>Roles, milestones, and the road so far.</p>
     </a>
   </section>
   <section class="blog-item">
     <a href="{base}/contact-me" class="blog-link">
       <h2>Contact me</h2>
-      <div class="blog-date">October 2, 2025</div>
       <p>Be in contact.</p>
     </a>
   </section>
@@ -81,11 +76,7 @@
   text-align: left;
   margin: 0 0 1rem 0;
   font-size: 1.3rem;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-to) 40%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-text);
 }
 
 .blog-item {

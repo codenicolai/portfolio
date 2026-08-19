@@ -1,5 +1,5 @@
 <script lang="ts">
-  import favicon from "$lib/assets/favicon.svg";
+  import favicon from "$lib/assets/favicon.png";
   import avatar from "$lib/assets/avatar.png";
   import { onMount } from 'svelte';
 
@@ -20,11 +20,13 @@
 
   function apply() {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', isDark ? '#404b54' : '#f8f8f8');
   }
 </script>
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
+  <link rel="icon" type="image/png" href={favicon} />
 </svelte:head>
 
 <nav class="navbar">
@@ -61,6 +63,7 @@
 
   :global(html) {
     background-color: var(--color-bg);
+    transition: background-color 0.25s ease;
   }
 
   :global(body) {

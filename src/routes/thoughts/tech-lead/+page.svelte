@@ -1,5 +1,5 @@
 <script>
-  import { base } from '$app/paths';
+import { base } from "$app/paths";
 </script>
 
 <main class="detail-container">
@@ -14,11 +14,11 @@
   <h1 class="post-title">Becoming a tech lead when you were just writing code</h1>
   <p class="post-date">April 2, 2026</p>
 
-  <p class="post-body">The first real challenge of moving into a lead role isn't the architecture decisions or the 1:1s — it's estimating and distributing work. When you're coding, you have a gut feel for how long things take. When you're responsible for a team, you're estimating work you won't be doing yourself, for people at different skill levels, in codebases they know differently than you do. Your gut is the wrong tool.</p>
-  <p class="post-body">I've learned to treat deadlines as hypotheses, not commitments. The first estimate is almost always wrong. What matters is building a feedback loop fast enough to catch it early — short cycles, clear scope, honest conversations before the deadline, not after. The hardest part is creating an environment where someone can say "I'm stuck and this will take longer" without it feeling like failure. That culture doesn't come from a process doc; it comes from how you respond the first few times it happens.</p>
-  <p class="post-body">Trade-offs are the core of the role. Almost every technical decision is a negotiation between speed and safety, consistency and pragmatism, what the team can maintain and what the product needs right now. The instinct is to always want the cleanest solution — but clean has a schedule cost, and sometimes the right call is a slightly less elegant one that ships on time and doesn't block six other people. Getting comfortable saying "this is good enough for now, and here's when we revisit it" is more useful than holding out for perfect.</p>
-  <p class="post-body">The other shift is learning to step back. Early on, I'd jump in and fix things because I could do it faster. That's a trap. The fastest path in the short term is the slowest path for the team — it keeps people dependent, it bottlenecks the work in you, and it prevents others from growing into ownership. Delegating well means trusting that someone will do it differently than you would, and that different is usually fine. Your job stops being to write the best code and starts being to create the conditions where other people can.</p>
-  <p class="post-body">Coming from development helps: I know where complexity hides, I can read a PR at the right level, and I understand when someone is blocked on a real problem versus spinning. But it also creates blind spots. Not everything that feels easy to me is easy for someone earlier in their career. The best adjustment I've made is asking "what would make this clearer?" instead of assuming the gap is effort.</p>
+  <p class="post-body">Nobody warns you that the first real skill you need as a lead has nothing to do with architecture. It's estimating work you're not going to do yourself. When I was coding full time, I had a feel for how long things took, in my hands, in my head. Once I had a team, I was estimating for people with different skill levels, in parts of the codebase they didn't know as well as I did. My gut was useless for that. Took me longer than I'd like to admit to notice.</p>
+  <p class="post-body">These days I treat every deadline as a first guess, not a promise. It's almost always wrong, and that's fine — what matters is catching it early. Short check-ins, clear scope, and honestly, the harder part: building a team where someone can tell me "I'm stuck, this is going to take longer" without feeling like they messed up. I didn't get that from a process doc. I got it from watching how people reacted the first couple times it happened, mine included.</p>
+  <p class="post-body">Trade-offs are basically the job now. Speed vs. safety, consistency vs. whatever the product actually needs this week. I used to always want the cleanest solution. But clean has a schedule cost, and sometimes the right move is the slightly uglier one that ships and doesn't block five other people. Saying "this is good enough for now, we'll revisit it" took practice. I still don't love saying it.</p>
+  <p class="post-body">The bigger shift, honestly, was learning to stop fixing things myself. Early on I'd jump in because I could do it faster, and that felt helpful. It wasn't. It just meant people stayed dependent on me and I became the bottleneck. Letting someone do it differently than I would have, and accepting that "different" is usually just fine, that's most of what delegating actually is.</p>
+  <p class="post-body">Coming from development helps in obvious ways. I know where the complexity actually hides, I can tell when someone's genuinely stuck versus spinning their wheels. But it also means I sometimes forget that what feels easy to me took me years to feel easy. Now when something isn't landing, I try to ask what would make it clearer instead of assuming it's an effort problem. Small change, better outcome.</p>
 </main>
 
 <style>
@@ -32,7 +32,11 @@
 @media (max-width: 900px) { .detail-container { width: 88vw; } }
 
 .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "Montserrat", sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); text-decoration: none; padding: 0.38rem 0.85rem 0.38rem 0.6rem; border-radius: 999px; border: 1px solid var(--color-border); background: transparent; transition: color 0.2s, border-color 0.2s, background 0.2s; margin-bottom: 0.5rem; align-self: flex-start; }
-.back-link:hover { color: var(--color-accent); border-color: var(--color-accent); background: var(--color-accent-subtle); }
+.back-link:hover {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background: var(--color-tag-bg);
+}
 .back-icon { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
 
 .post-tag {
@@ -41,7 +45,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--color-ruby);
 }
 
 .post-title {
@@ -50,11 +54,7 @@
   font-weight: 700;
   margin: 0;
   line-height: 1.3;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-to) 60%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-text);
 }
 
 .post-date {

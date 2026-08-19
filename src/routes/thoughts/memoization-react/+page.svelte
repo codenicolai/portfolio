@@ -1,5 +1,5 @@
 <script>
-  import { base } from '$app/paths';
+import { base } from "$app/paths";
 </script>
 
 <main class="detail-container">
@@ -14,10 +14,10 @@
   <h1 class="post-title">Memoization in React: when it helps and when it just adds noise</h1>
   <p class="post-date">October 30, 2025</p>
 
-  <p class="post-body">There's a phase most React developers go through where they start wrapping everything in <code>useMemo</code> and <code>useCallback</code>. It feels responsible — caching things, preventing re-renders, being thoughtful about performance. But memoization has a cost too: memory, code complexity, and the cognitive overhead of tracking dependencies correctly.</p>
-  <p class="post-body">At one point we had a filter panel component — a dozen checkboxes and a search input — where every handler was wrapped in <code>useCallback</code> and every derived value in <code>useMemo</code>. It looked thorough. When I profiled it with React DevTools Profiler, the component was re-rendering maybe twice per interaction and each render took under 1ms. We were paying the memoization overhead for a component that had no performance problem to begin with. Removing it cut about 30 lines of dependency arrays and made the code straightforward to read again. The lesson wasn't that memoization is bad — it's that measuring first changes everything.</p>
-  <p class="post-body">The real question is whether the computation or reference is actually expensive. Primitive comparisons are cheap. Object creation is cheap. What's expensive is re-rendering a complex tree, or recalculating something that touches hundreds of items on every keystroke. Memoization makes sense when you can measure the problem it solves — not as a default style.</p>
-  <p class="post-body">With the React Compiler now stable in React 19, a lot of manual memoization will become unnecessary — the compiler handles referential stability automatically. The best thing you can do now is understand the primitives well enough to recognize where the compiler still needs your help.</p>
+  <p class="post-body">There's a phase every React developer goes through where <code>useMemo</code> and <code>useCallback</code> show up on basically everything. I went through it too. It feels responsible, like you're being careful with performance. Nobody tells you memoization has its own cost: more memory, more code to read, dependency arrays you now have to keep correct forever.</p>
+  <p class="post-body">I had a filter panel once, a dozen checkboxes and a search box, wrapped top to bottom in <code>useCallback</code> and <code>useMemo</code>. Looked very thorough. Then I actually opened the Profiler and watched it: two re-renders per interaction, under a millisecond each. We were paying for memoization on a component that had never had a performance problem in its life. Ripped it out, lost about 30 lines of dependency arrays, and the code was suddenly readable again. Memoization isn't the villain here. Not measuring first is.</p>
+  <p class="post-body">The question I ask now is just: is this actually expensive? Primitive comparisons, cheap. Creating an object, cheap. What's expensive is re-rendering a big tree, or recalculating something across hundreds of items on every keystroke. If you can't point to the problem, you probably don't have one yet.</p>
+  <p class="post-body">With the React Compiler stable in 19, most of this manual work is going away anyway, which honestly is a relief. The useful skill going forward isn't memoizing out of habit, it's knowing the few spots where the compiler still needs a hand.</p>
 </main>
 
 <style>
@@ -31,7 +31,11 @@
 @media (max-width: 900px) { .detail-container { width: 88vw; } }
 
 .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "Montserrat", sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); text-decoration: none; padding: 0.38rem 0.85rem 0.38rem 0.6rem; border-radius: 999px; border: 1px solid var(--color-border); background: transparent; transition: color 0.2s, border-color 0.2s, background 0.2s; margin-bottom: 0.5rem; align-self: flex-start; }
-.back-link:hover { color: var(--color-accent); border-color: var(--color-accent); background: var(--color-accent-subtle); }
+.back-link:hover {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background: var(--color-tag-bg);
+}
 .back-icon { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
 
 .post-tag {
@@ -40,7 +44,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--color-ruby);
 }
 
 .post-title {
@@ -49,11 +53,7 @@
   font-weight: 700;
   margin: 0;
   line-height: 1.3;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-to) 60%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-text);
 }
 
 .post-date {

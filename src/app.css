@@ -6,8 +6,8 @@
 	--color-text-muted: #888888;
 	--color-border: #e0e0e0;
 	--color-shadow: rgba(0, 0, 0, 0.05);
-	--color-tag-bg: #ede8fb;
-	--color-tag-text: #6320c4;
+	--color-tag-bg: #ebebeb;
+	--color-tag-text: #555555;
 	--color-avatar-bg: #ffffff;
 	--color-toggle-bg: #ebebeb;
 	--color-toggle-hover: #dcdcdc;
@@ -16,6 +16,8 @@
 	--color-accent: #7331d5;
 	--color-accent-to: #954af6;
 	--color-accent-subtle: rgba(128, 40, 243, 0.06);
+	--color-ruby: #e0115f;
+	--color-emerald: #50c878;
 }
 
 /* Dark mode — Pantone 432 C (#404B54) */
@@ -26,8 +28,8 @@
 	--color-text-muted: #8fa0ae;
 	--color-border: #515f6b;
 	--color-shadow: rgba(0, 0, 0, 0.25);
-	--color-tag-bg: rgba(145, 141, 252, 0.18);
-	--color-tag-text: #c4bfff;
+	--color-tag-bg: rgba(255, 255, 255, 0.08);
+	--color-tag-text: #c8cdd6;
 	--color-avatar-bg: #4a5660;
 	--color-toggle-bg: #515f6b;
 	--color-toggle-hover: #5e6e7a;
@@ -36,6 +38,7 @@
 	--color-accent: #918dfc;
 	--color-accent-to: #c4bfff;
 	--color-accent-subtle: rgba(145, 141, 252, 0.12);
+	--color-ruby: #ffffff;
 }
 
 body {
