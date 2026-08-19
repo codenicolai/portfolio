@@ -6,37 +6,41 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#f8f8f8" />
 		<script>
 			try {
 				const saved = localStorage.getItem('theme');
 				const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-				document.documentElement.setAttribute('data-theme', saved || preferred);
+				const theme = saved || preferred;
+				document.documentElement.setAttribute('data-theme', theme);
+				const meta = document.querySelector('meta[name="theme-color"]');
+				if (meta) meta.setAttribute('content', theme === 'dark' ? '#404b54' : '#f8f8f8');
 			} catch(e) {}
 		</script>
 		
-		<link href="/portfolio/_app/immutable/assets/0.BhIKxqYA.css" rel="stylesheet">
-		<link href="/portfolio/_app/immutable/assets/9.CFl4Qvod.css" rel="stylesheet">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/start.CpzDBjKh.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/CdrI1OH5.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/8A78mZO3.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BiIQkMjk.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DPaXJyiO.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/app.7fCR62OG.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DcR6Rj4h.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/C0hIfjJR.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/CdCKCctO.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/Bje4MNxB.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/0.DUKcFWxe.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/CG6XLpZX.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/9.c7t13fv-.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/oko5Z-RB.js"><!--12qhfyh--><link rel="icon" href="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='107'%20height='128'%20viewBox='0%200%20107%20128'%3e%3ctitle%3esvelte-logo%3c/title%3e%3cpath%20d='M94.157%2022.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282%2029.608A29.92%2029.92%200%200%200%208.764%2049.65a31.5%2031.5%200%200%200%203.108%2020.231%2030%2030%200%200%200-4.477%2011.183%2031.9%2031.9%200%200%200%205.448%2024.116c10.402%2014.887%2030.942%2019.297%2045.791%209.835l26.083-16.624A29.92%2029.92%200%200%200%2098.235%2078.35a31.53%2031.53%200%200%200-3.105-20.232%2030%2030%200%200%200%204.474-11.182%2031.88%2031.88%200%200%200-5.447-24.116'%20style='fill:%23ff3e00'/%3e%3cpath%20d='M45.817%20106.582a20.72%2020.72%200%200%201-22.237-8.243%2019.17%2019.17%200%200%201-3.277-14.503%2018%2018%200%200%201%20.624-2.435l.49-1.498%201.337.981a33.6%2033.6%200%200%200%2010.203%205.098l.97.294-.09.968a5.85%205.85%200%200%200%201.052%203.878%206.24%206.24%200%200%200%206.695%202.485%205.8%205.8%200%200%200%201.603-.704L69.27%2076.28a5.43%205.43%200%200%200%202.45-3.631%205.8%205.8%200%200%200-.987-4.371%206.24%206.24%200%200%200-6.698-2.487%205.7%205.7%200%200%200-1.6.704l-9.953%206.345a19%2019%200%200%201-5.296%202.326%2020.72%2020.72%200%200%201-22.237-8.243%2019.17%2019.17%200%200%201-3.277-14.502%2017.99%2017.99%200%200%201%208.13-12.052l26.081-16.623a19%2019%200%200%201%205.3-2.329%2020.72%2020.72%200%200%201%2022.237%208.243%2019.17%2019.17%200%200%201%203.277%2014.503%2018%2018%200%200%201-.624%202.435l-.49%201.498-1.337-.98a33.6%2033.6%200%200%200-10.203-5.1l-.97-.294.09-.968a5.86%205.86%200%200%200-1.052-3.878%206.24%206.24%200%200%200-6.696-2.485%205.8%205.8%200%200%200-1.602.704L37.73%2051.72a5.42%205.42%200%200%200-2.449%203.63%205.79%205.79%200%200%200%20.986%204.372%206.24%206.24%200%200%200%206.698%202.486%205.8%205.8%200%200%200%201.602-.704l9.952-6.342a19%2019%200%200%201%205.295-2.328%2020.72%2020.72%200%200%201%2022.237%208.242%2019.17%2019.17%200%200%201%203.277%2014.503%2018%2018%200%200%201-8.13%2012.053l-26.081%2016.622a19%2019%200%200%201-5.3%202.328'%20style='fill:%23fff'/%3e%3c/svg%3e"/><!---->
+		<link href="/portfolio/_app/immutable/assets/0.G-69MWZc.css" rel="stylesheet">
+		<link href="/portfolio/_app/immutable/assets/10.hLaS-ceC.css" rel="stylesheet">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/start.1ZowdNoj.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DRdYrOhp.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BG75QkX5.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/Dd5kX-VJ.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BCwjHkxY.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/app.Dg_ppCP-.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DeAbRUht.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BqnLgsCb.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/jNniZWi8.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BjbMnLAr.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/0.CFCVdAnv.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BFgiUodz.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/10.B9QHz3-L.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DIQ3eIqK.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/portfolio/_app/immutable/assets/favicon.DlsIElkM.png"/><!---->
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button> <a class="navbar-avatar svelte-12qhfyh" href="https://github.com/codenicolai" target="_blank" rel="noopener noreferrer" title="nicolai on GitHub"><img src="/portfolio/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><main class="detail-container svelte-yh940m"><a href="/portfolio/thoughts" class="back-link svelte-yh940m"><svg class="back-icon svelte-yh940m" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-yh940m">React</span> <h1 class="post-title svelte-yh940m">The hidden cost of barrel files</h1> <p class="post-date svelte-yh940m">January 14, 2026</p> <p class="post-body svelte-yh940m">Barrel files — those <code class="svelte-yh940m">index.ts</code> files that re-export everything from a folder — feel like a convenience. One import instead of five, paths that read cleanly, no hunting through the filesystem. But what looks like organization often becomes a bundling problem in disguise.</p> <p class="post-body svelte-yh940m">The issue is that bundlers have to parse the entire barrel to determine what's actually used. Even with tree-shaking, circular dependencies can form silently, and in large codebases, import chains grow deep. The result: slower cold starts, larger initial bundles, and module evaluation happening earlier than needed. I've seen build times spike noticeably after a team standardized on barrels without thinking about the consequences.</p> <p class="post-body svelte-yh940m">A concrete example: working on a mid-size dashboard with several feature-heavy modules, I opened Chrome's Network tab during a cold page load and counted over 1,600 module requests. Not all of them were barrel-caused, but after auditing the import chains and switching to direct imports across the feature folders — keeping barrels only at the design system boundary — requests settled between 900 and 1,100 depending on the route. Vite's build time dropped too, a few seconds shaved off a CI step that was already too slow. The change was unglamorous. Nobody noticed. That's how good infrastructure work tends to feel.</p> <p class="post-body svelte-yh940m">The practical advice is simple: favor direct imports for anything performance-sensitive, and reserve barrels for genuine public APIs — the surface of a library or a shared design system, not every subfolder of a feature. A small discipline that pays off quietly over time.</p></main><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button> <a class="navbar-avatar svelte-12qhfyh" href="https://github.com/codenicolai" target="_blank" rel="noopener noreferrer" title="nicolai on GitHub"><img src="/portfolio/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><main class="detail-container svelte-yh940m"><a href="/portfolio/thoughts" class="back-link svelte-yh940m"><svg class="back-icon svelte-yh940m" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-yh940m">React</span> <h1 class="post-title svelte-yh940m">The hidden cost of barrel files</h1> <p class="post-date svelte-yh940m">January 14, 2026</p> <p class="post-body svelte-yh940m">I used to love barrel files. Those <code class="svelte-yh940m">index.ts</code> files that re-export everything from a folder, so you get one tidy import instead of five. No digging through the filesystem to find the right path. What's not to like? Turns out plenty, once a codebase grows past "small."</p> <p class="post-body svelte-yh940m">The problem is bundlers have to parse the whole barrel to figure out what's actually being used. Tree-shaking helps, but not as much as people assume. Circular dependencies sneak in quietly, import chains get deep, and modules start evaluating way earlier than they need to. I watched a team's build times creep up for weeks before anyone connected it to the barrels they'd standardized on.</p> <p class="post-body svelte-yh940m">On one dashboard project I was debugging, I opened the Network tab on a cold load out of curiosity and counted over 1,600 module requests. Sixteen hundred. Not all of that was barrels, but after I went through and switched the feature folders to direct imports, keeping barrels only around the design system, it settled down to somewhere between 900 and 1,100 depending on the route. Vite's build got a few seconds faster too. Nobody on the team really noticed the change, which is honestly how you know infrastructure work went well.</p> <p class="post-body svelte-yh940m">My rule now: direct imports for anything performance-sensitive, barrels only for things that are genuinely public, a library's surface, a shared design system. Not every folder that happens to have more than one file in it.</p></main><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1h0xboz = {
+					__sveltekit_1surd9b = {
 						base: "/portfolio",
 						assets: "/portfolio"
 					};
@@ -44,11 +48,11 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/portfolio/_app/immutable/entry/start.CpzDBjKh.js"),
-						import("/portfolio/_app/immutable/entry/app.7fCR62OG.js")
+						import("/portfolio/_app/immutable/entry/start.1ZowdNoj.js"),
+						import("/portfolio/_app/immutable/entry/app.Dg_ppCP-.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 9],
+							node_ids: [0, 10],
 							data: [null,null],
 							form: null,
 							error: null
