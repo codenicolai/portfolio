@@ -4,7 +4,7 @@ import { base } from "$app/paths";
 
 <main class="blog-container">
   <section class="blog-title">
-    <h2>.nicolaileo</h2>
+    <h2>nicolaileo</h2>
   </section>
 
   <section class="blog-item">
