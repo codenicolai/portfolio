@@ -18,7 +18,9 @@ import { base } from "$app/paths";
 
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
+        <a class="timeline-logo" href="https://atlasgov.com" target="_blank" rel="noopener noreferrer" aria-label="Atlas Governance website">
+          <img src="{base}/logos/atlas-governance.jpeg" alt="Atlas Governance logo" />
+        </a>
         <div class="timeline-body">
           <div class="timeline-header">
             <span class="company">Atlas Governance</span>
@@ -30,7 +32,9 @@ import { base } from "$app/paths";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
+        <a class="timeline-logo" href="https://porter.com.br" target="_blank" rel="noopener noreferrer" aria-label="Porter Group website">
+          <img src="{base}/logos/porter-group.jpeg" alt="Porter Group logo" />
+        </a>
         <div class="timeline-body">
           <div class="timeline-header">
             <span class="company">Porter Group</span>
@@ -42,7 +46,9 @@ import { base } from "$app/paths";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
+        <a class="timeline-logo" href="https://sanarmed.com" target="_blank" rel="noopener noreferrer" aria-label="Sanar website">
+          <img src="{base}/logos/sanar.jpeg" alt="Sanar logo" />
+        </a>
         <div class="timeline-body">
           <div class="timeline-header">
             <span class="company">Sanar</span>
@@ -54,7 +60,9 @@ import { base } from "$app/paths";
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
+        <a class="timeline-logo" href="https://www.sponte.com.br" target="_blank" rel="noopener noreferrer" aria-label="Sponte website">
+          <img src="{base}/logos/sponte.png" alt="Sponte logo" />
+        </a>
         <div class="timeline-body">
           <div class="timeline-header">
             <span class="company">Sponte</span>
@@ -66,7 +74,9 @@ import { base } from "$app/paths";
       </div>
 
       <div class="timeline-item last">
-        <div class="timeline-dot"></div>
+        <a class="timeline-logo" href="https://www.codengage.com" target="_blank" rel="noopener noreferrer" aria-label="Codengage website">
+          <img src="{base}/logos/codengage.jpg" alt="Codengage logo" />
+        </a>
         <div class="timeline-body">
           <div class="timeline-header">
             <span class="company">Codengage</span>
@@ -84,7 +94,6 @@ import { base } from "$app/paths";
     <h2 class="section-title">Events &amp; Talks</h2>
 
     <article class="event">
-      <span class="event-tag">Conference</span>
       <div class="event-header">
         <h3 class="event-title">TDC Innovation — Florianópolis</h3>
         <p class="event-date">2025</p>
@@ -102,7 +111,7 @@ import { base } from "$app/paths";
 
 <style>
 .detail-container {
-  width: 52vw;
+  width: 40vw;
   margin: 2rem auto 4rem auto;
   display: flex;
   flex-direction: column;
@@ -153,22 +162,35 @@ import { base } from "$app/paths";
 .timeline-item:not(.last)::before {
   content: '';
   position: absolute;
-  left: 6px;
-  top: 14px;
+  left: 17px;
+  top: 38px;
   bottom: 0;
   width: 1px;
   background: var(--color-border);
 }
-.timeline-dot {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--color-ruby);
+.timeline-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
   flex-shrink: 0;
-  margin-top: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 0 3px var(--color-bg);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.timeline-logo:hover {
+  transform: scale(1.06);
+}
+.timeline-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .timeline-body { flex: 1; }
 .timeline-header {
@@ -209,15 +231,6 @@ import { base } from "$app/paths";
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-}
-
-.event-tag {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-ruby);
 }
 
 .event-header {
