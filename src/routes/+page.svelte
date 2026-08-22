@@ -4,7 +4,7 @@ import { base } from "$app/paths";
 
 <main class="blog-container">
   <section class="blog-title">
-    <h2>nicolaileo</h2>
+    <h2>.nicolaileo</h2>
   </section>
 
   <section class="blog-item">
@@ -18,7 +18,7 @@ import { base } from "$app/paths";
   <section class="blog-item">
     <a href="{base}/skills" class="blog-link">
       <h2>Skills</h2>
-      <p>React, Next.js, TypeScript, Node.js.</p>
+      <p>React, React Native, TypeScript, Node.js, but with a design eye.</p>
     </a>
   </section>
   

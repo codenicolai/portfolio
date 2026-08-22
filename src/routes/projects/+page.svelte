@@ -1,139 +1,237 @@
 <script>
-  import { base } from '$app/paths';
-  import { skillIcons } from '$lib/skillIcons.js';
+import { base } from "$app/paths";
+import { skillIcons } from "$lib/skillIcons.js";
+import grana1 from "$lib/assets/grana1.png";
+import grana2 from "$lib/assets/grana2.png";
+import futSimulator1 from "$lib/assets/fut-simulator-1.png";
+import futSimulator2 from "$lib/assets/fut-simulator-2.png";
+import futSimulator3 from "$lib/assets/fut-simulator-3.png";
+import agm1 from "$lib/assets/agm1.png";
+import agm2 from "$lib/assets/agm2.png";
+import agm3 from "$lib/assets/agm3.png";
+import agm4 from "$lib/assets/agm4.png";
+import agm5 from "$lib/assets/agm5.png";
+import agm6 from "$lib/assets/agm6.png";
+import agm7 from "$lib/assets/agm7.png";
+import agm8 from "$lib/assets/agm8.png";
+import agm9 from "$lib/assets/agm9.png";
+import agm10 from "$lib/assets/agm10.png";
+import csv1 from "$lib/assets/csv1.png";
+import csv2 from "$lib/assets/csv2.png";
+import csv3 from "$lib/assets/csv3.png";
 
-  const categories = ['All', 'AI', 'Frontend', 'Websockets', 'Backend'];
+const categories = ["All", "AI", "Frontend", "Websockets", "Backend", "UX/UI"];
 
-  const projects = [
-    {
-      tag: 'UI · Design System',
-      name: 'Sponte: Design System & Component Library',
-      desc: 'Scalable component library to standardize UI development and accelerate delivery across applications.',
-      techs: [
-        { icon: 'react', label: 'React' },
-        { icon: 'typescript', label: 'TypeScript' },
-        { icon: 'storybook', label: 'Storybook' },
-        { icon: 'styledcomponents', label: 'Styled Components' }
-      ],
-      contributions: [
-        'Reusable UI components: lists, loaders, skeletons, feedback states',
-        'Standardized visual and interaction patterns with accessibility in mind',
-        'Scalable structure handling all UI states: loading, empty, error, success'
-      ],
-      highlight: 'Strong focus on UX states and component scalability, thinking beyond visuals.',
-      categories: ['Frontend']
-    },
-    {
-      tag: 'Real-Time · Infrastructure',
-      name: 'Real-Time Monitoring Platform',
-      desc: 'Home security platform with live WebSocket updates, used by 100+ concurrent call-center agents monitoring doors, gates, and alarm status in real time.',
-      techs: [
-        { icon: 'react', label: 'React' },
-        { icon: 'nextjs', label: 'Next.js' },
-        { icon: 'websockets', label: 'WebSockets' },
-        { icon: 'nodejs', label: 'Node.js' },
-        { icon: 'redis', label: 'Redis' }
-      ],
-      contributions: [
-        'Real-time UI powered by WebSockets with live status for multiple devices',
-        'Responsive dashboards designed for continuous monitoring',
-        'Maintained connection stability under high-frequency updates per minute'
-      ],
-      highlight: 'Used by 100+ concurrent call-center agents handling high-frequency updates per minute.',
-      categories: ['Websockets', 'Backend', 'Frontend']
-    },
-    {
-      tag: 'AI · Governance',
-      name: 'Atlas Governance: AI-Powered Meeting Platform',
-      desc: 'Corporate governance platform for managing assemblies, discussions, and voting, enhanced with AI for communication and decision-making.',
-      techs: [
-        { icon: 'react', label: 'React' },
-        { icon: 'websockets', label: 'WebSockets' },
-        { icon: 'openai', label: 'OpenAI API' },
-        { icon: 'zoomsdk', label: 'Zoom SDK' }
-      ],
-      contributions: [
-        'AI integration for real-time transcription, summarization, and translation',
-        'Meeting assistant with AI listening and live chat interaction',
-        'Full video call system integration alongside AI and chat layers',
-        'Built a PDF-to-assembly generation feature, auto-extracting shareholder meeting data'
-      ],
-      highlight: '70% faster registration for complex assemblies, by automating assembly creation from PDF documents.',
-      categories: ['AI', 'Websockets', 'Backend']
-    },
-    {
-      tag: 'Performance · Frontend',
-      name: 'Atlas Governance: Frontend Performance',
-      desc: "Bundle size audit and cleanup for the platform's core Vite application, targeting load performance.",
-      techs: [
-        { icon: 'react', label: 'React' },
-        { icon: 'vite', label: 'Vite' },
-        { icon: 'performance', label: 'Performance' }
-      ],
-      contributions: [
-        'Audited and removed barrel-file re-exports across the codebase',
-        'Re-structured module imports to enable proper tree-shaking',
-        'Validated gains with bundle analysis before and after the change'
-      ],
-      highlight: '50% smaller production bundle after removing barrel files.',
-      categories: ['Frontend']
-    },
-    {
-      tag: 'AI · Veterinary · Desktop',
-      name: 'Ultrasound Report Reader',
-      desc: 'Desktop app that reads veterinary ultrasound images and extracts structured metrics (measurements, tissue observations, diagnostic notes), then exports a clean report.',
-      techs: [
-        { icon: 'electron', label: 'Electron' },
-        { icon: 'javascript', label: 'JavaScript' },
-        { icon: 'openai', label: 'OpenAI API' }
-      ],
-      contributions: [
-        'OpenAI Vision API integration with structured prompt engineering',
-        'Desktop interface built with Electron for local file processing',
-        'Automated extraction and exportable structured report output'
-      ],
-      highlight: 'Combination of desktop development and document intelligence for veterinary use.',
-      categories: ['AI', 'Frontend']
-    },
-    {
-      tag: 'Performance · Data',
-      name: 'Atlas Governance: Large-Scale CSV Handling',
-      desc: 'Frontend that makes datasets exceeding 500k rows viewable in real time, directly in the browser, without crashing or degrading the user experience.',
-      techs: [
-        { icon: 'react', label: 'React' },
-        { icon: 'infinitescroll', label: 'Infinite Scroll' },
-        { icon: 'csvparsing', label: 'CSV parsing' }
-      ],
-      contributions: [
-        'Built infinite scroll and dynamic loading to render 500k+ row datasets',
-        'Optimized parsing and state management to avoid UI blocking',
-        'Maintained smooth interaction under continuous data load'
-      ],
-      highlight: '500K-row dataset made browsable through infinite scroll and dynamic loading.',
-      categories: ['Frontend']
-    },
-    {
-      tag: 'Personal · Mobile',
-      name: 'Personal Finance App',
-      desc: 'Personal project for tracking personal income, expenses, and budgets.',
-      techs: [
-        { icon: 'flutter', label: 'Flutter' },
-        { icon: 'dart', label: 'Dart' }
-      ],
-      contributions: [
-        'Income, expense, and budget tracking in a single mobile app',
-        'Built end-to-end as a personal project, from design to release'
-      ],
-      highlight: 'First personal project built with Flutter, outside of the usual JS/TS stack.',
-      categories: ['Frontend']
-    }
-  ];
+const projects = [
+	{
+		tag: "Performance · Data",
+		name: "Atlas Governance: Large-Scale CSV Handling",
+		desc: "Frontend that makes datasets exceeding 500k rows viewable in real time, directly in the browser, without crashing or degrading the user experience.",
+		techs: [
+			{ icon: "react", label: "React" },
+			{ icon: "infinitescroll", label: "Infinite Scroll" },
+			{ icon: "csvparsing", label: "CSV parsing" },
+		],
+		contributions: [
+			"Built infinite scroll and dynamic loading to render 500k+ row datasets",
+			"Optimized parsing and state management to avoid UI blocking",
+			"Maintained smooth interaction under continuous data load",
+		],
+		highlight:
+			"500K-row dataset made browsable through infinite scroll and dynamic loading.",
+		categories: ["Frontend"],
+		screenshots: [csv1, csv2, csv3],
+	},
+	{
+		tag: "UI · Design System",
+		name: "Sponte: Design System & Component Library",
+		desc: "Scalable component library to standardize UI development and accelerate delivery across applications.",
+		techs: [
+			{ icon: "react", label: "React" },
+			{ icon: "typescript", label: "TypeScript" },
+			{ icon: "storybook", label: "Storybook" },
+			{ icon: "styledcomponents", label: "Styled Components" },
+		],
+		contributions: [
+			"Reusable UI components: lists, loaders, skeletons, feedback states",
+			"Standardized visual and interaction patterns with accessibility in mind",
+			"Scalable structure handling all UI states: loading, empty, error, success",
+		],
+		highlight:
+			"Strong focus on UX states and component scalability, thinking beyond visuals.",
+		categories: ["Frontend"],
+	},
+	{
+		tag: "Real-Time · Infrastructure",
+		name: "Real-Time Monitoring Platform",
+		desc: "Home security platform with live WebSocket updates, used by 100+ concurrent call-center agents monitoring doors, gates, and alarm status in real time.",
+		techs: [
+			{ icon: "react", label: "React" },
+			{ icon: "nextjs", label: "Next.js" },
+			{ icon: "websockets", label: "WebSockets" },
+			{ icon: "nodejs", label: "Node.js" },
+			{ icon: "redis", label: "Redis" },
+		],
+		contributions: [
+			"Real-time UI powered by WebSockets with live status for multiple devices",
+			"Responsive dashboards designed for continuous monitoring",
+			"Maintained connection stability under high-frequency updates per minute",
+		],
+		highlight:
+			"Used by 100+ concurrent call-center agents handling high-frequency updates per minute.",
+		categories: ["Websockets", "Backend", "Frontend"],
+	},
+	{
+		tag: "AI · Governance",
+		name: "Atlas Governance: AI-Powered Meeting Platform",
+		desc: "Corporate governance platform for managing assemblies, discussions, and voting, enhanced with AI for communication and decision-making.",
+		techs: [
+			{ icon: "react", label: "React" },
+			{ icon: "websockets", label: "WebSockets" },
+			{ icon: "openai", label: "OpenAI API" },
+			{ icon: "zoomsdk", label: "Zoom SDK" },
+		],
+		contributions: [
+			"AI integration for real-time transcription, summarization, and translation",
+			"Meeting assistant with AI listening and live chat interaction",
+			"Full video call system integration alongside AI and chat layers",
+			"Built a PDF-to-assembly generation feature, auto-extracting shareholder meeting data",
+		],
+		highlight:
+			"70% faster registration for complex assemblies, by automating assembly creation from PDF documents.",
+		categories: ["AI", "Websockets", "Backend"],
+		screenshots: [agm1, agm2, agm3, agm4, agm5, agm6, agm7, agm8, agm9, agm10],
+	},
+	{
+		tag: "Performance · Frontend",
+		name: "Atlas Governance: Frontend Performance",
+		desc: "Bundle size audit and cleanup for the platform's core Vite application, targeting load performance.",
+		techs: [
+			{ icon: "react", label: "React" },
+			{ icon: "vite", label: "Vite" },
+			{ icon: "performance", label: "Performance" },
+		],
+		contributions: [
+			"Audited and removed barrel-file re-exports across the codebase",
+			"Re-structured module imports to enable proper tree-shaking",
+			"Validated gains with bundle analysis before and after the change",
+		],
+		highlight: "50% smaller production bundle after removing barrel files.",
+		categories: ["Frontend"],
+	},
+	{
+		tag: "AI · Veterinary · Desktop",
+		name: "Ultrasound Report Reader",
+		desc: "Desktop app that reads veterinary ultrasound images and extracts structured metrics (measurements, tissue observations, diagnostic notes), then exports a clean report.",
+		techs: [
+			{ icon: "electron", label: "Electron" },
+			{ icon: "javascript", label: "JavaScript" },
+			{ icon: "openai", label: "OpenAI API" },
+		],
+		contributions: [
+			"OpenAI Vision API integration with structured prompt engineering",
+			"Desktop interface built with Electron for local file processing",
+			"Automated extraction and exportable structured report output",
+		],
+		highlight:
+			"Combination of desktop development and document intelligence for veterinary use.",
+		categories: ["AI", "Frontend"],
+	},
+	{
+		tag: "Personal · Mobile",
+		name: "Finance App",
+		desc: "Personal project for tracking personal income, expenses, and budgets.",
+		techs: [
+			{ icon: "flutter", label: "Flutter" },
+			{ icon: "dart", label: "Dart" },
+		],
+		contributions: [
+			"Income, expense, and budget tracking in a single mobile app",
+			"Built end-to-end as a personal project, from design to release",
+		],
+		highlight:
+			"First personal project built with Flutter, outside of the usual JS/TS stack.",
+		categories: ["Frontend", "UX/UI"],
+		screenshots: [grana1, grana2],
+	},
+	{
+		tag: "UX/UI · Product Design",
+		name: "Soccer Simulator",
+		desc: "UI/UX concept for a football club management simulator: squad management, match center, standings, and player detail views.",
+		techs: [{ icon: "uidesign", label: "UI/UX Design" }],
+		contributions: [
+			"Designed a dense data-heavy squad screen that stays readable at a glance",
+			"Built a player detail panel surfacing stats, contract, and traits without overwhelming the layout",
+			"Established a consistent visual language across squad, calendar, standings, and top scorers views",
+		],
+		highlight:
+			"A design-only concept exploring how to make a stats-heavy sports management UI feel clean instead of cluttered.",
+		categories: ["UX/UI"],
+		screenshots: [futSimulator1, futSimulator2, futSimulator3],
+	},
+	{
+		tag: "Desktop · Cross-Platform",
+		name: "Brasfoot: Windows to macOS Port",
+		desc: "Ported the Windows-only game Brasfoot to run natively on macOS, without relying on Windows emulation.",
+		techs: [
+			{ icon: "java", label: "Java" },
+			{ icon: "macos", label: "macOS" },
+		],
+		contributions: [
+			"Diagnosed a Java environment check that only validated Windows-style paths, causing the app to fail to launch on macOS",
+			"Built a cross-platform Java runtime handler that checks macOS install locations and PATH before falling back to the original Windows logic",
+			"Adapted launch and file-handling logic so the game runs natively on macOS",
+		],
+		highlight:
+			"Unblocked a Windows-only desktop game to run natively on macOS by replacing a hardcoded Windows-path check with a portable Java runtime handler.",
+		categories: ["Backend", "AI"],
+	},
+];
 
-  let selected = $state('All');
-  const filteredProjects = $derived(
-    selected === 'All' ? projects : projects.filter((p) => p.categories.includes(selected))
-  );
+let selected = $state("All");
+const filteredProjects = $derived(
+	(selected === "All"
+		? projects
+		: projects.filter((p) => p.categories.includes(selected))
+	)
+		.slice()
+		.sort((a, b) => (b.screenshots ? 1 : 0) - (a.screenshots ? 1 : 0)),
+);
+
+/** @type {string[] | null} */
+let activeGallery = $state(null);
+let activeIndex = $state(0);
+
+/** @param {{ screenshots?: string[] }} project */
+function openGallery(project) {
+	activeGallery = project.screenshots ?? null;
+	activeIndex = 0;
+}
+
+function closeGallery() {
+	activeGallery = null;
+}
+
+function nextImage() {
+	if (!activeGallery) return;
+	activeIndex = (activeIndex + 1) % activeGallery.length;
+}
+
+function prevImage() {
+	if (!activeGallery) return;
+	activeIndex = (activeIndex - 1 + activeGallery.length) % activeGallery.length;
+}
+
+/** @param {KeyboardEvent} e */
+function handleKeydown(e) {
+	if (!activeGallery) return;
+	if (e.key === "Escape") closeGallery();
+	else if (e.key === "ArrowRight") nextImage();
+	else if (e.key === "ArrowLeft") prevImage();
+}
 </script>
+
+<svelte:window onkeydown={handleKeydown} />
 
 <main class="detail-container">
   <a href="{base}/" class="back-link">
@@ -160,10 +258,35 @@
 
   {#each filteredProjects as project, i}
     <article class="project">
+      {#if project.screenshots}
+        <button
+          type="button"
+          class="card-overlay-link"
+          tabindex="-1"
+          aria-hidden="true"
+          onclick={() => openGallery(project)}
+        ></button>
+      {/if}
       <div class="project-top">
         <div>
           <span class="project-tag">{project.tag}</span>
-          <h2 class="project-name">{project.name}</h2>
+          <div class="project-name-row">
+            <h2 class="project-name">{project.name}</h2>
+            {#if project.screenshots}
+              <button
+                type="button"
+                class="gallery-btn"
+                aria-label="View screenshots for {project.name}"
+                onclick={() => openGallery(project)}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="9" cy="9" r="2" />
+                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                </svg>
+              </button>
+            {/if}
+          </div>
           <p class="project-desc">{project.desc}</p>
         </div>
       </div>
@@ -184,6 +307,38 @@
     {/if}
   {/each}
 </main>
+
+{#if activeGallery}
+  <div class="modal-overlay" onclick={closeGallery} role="presentation">
+    <div class="modal-content" role="presentation" onclick={(e) => e.stopPropagation()}>
+      <button type="button" class="modal-close" aria-label="Close" onclick={closeGallery}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      {#if activeGallery.length > 1}
+        <button type="button" class="modal-nav modal-nav-prev" aria-label="Previous image" onclick={prevImage}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+      {/if}
+
+      <img class="modal-image" src={activeGallery[activeIndex]} alt="Screenshot {activeIndex + 1}" />
+
+      {#if activeGallery.length > 1}
+        <button type="button" class="modal-nav modal-nav-next" aria-label="Next image" onclick={nextImage}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+        <div class="modal-counter">{activeIndex + 1} / {activeGallery.length}</div>
+      {/if}
+    </div>
+  </div>
+{/if}
 
 <style>
 .detail-container {
@@ -242,10 +397,29 @@
 
 /* Project */
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
   padding: 0.25rem 0 1.1rem 0;
+}
+
+.card-overlay-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.card-overlay-link:focus-visible {
+  outline: 2px solid var(--color-ruby);
+  outline-offset: 4px;
+  border-radius: 10px;
 }
 
 .project-tag {
@@ -259,12 +433,43 @@
   margin-bottom: 0.3rem;
 }
 
+.project-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.35rem 0;
+}
+
 .project-name {
   font-family: "Montserrat", sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-text-secondary);
-  margin: 0 0 0.35rem 0;
+  margin: 0;
+}
+
+.gallery-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.gallery-btn:hover {
+  color: var(--color-ruby);
+}
+.gallery-btn svg {
+  width: 16px;
+  height: 16px;
 }
 
 .project-desc {
@@ -327,20 +532,89 @@
   margin: 0;
 }
 
-/* Screenshot */
-.project-screenshot img {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-  box-shadow: 0 4px 20px var(--color-img-shadow);
-  object-fit: cover;
-}
-
 /* Divider */
 .divider {
   width: 100%;
   height: 1px;
   background: var(--color-border);
   margin: 0.4rem 0 1rem 0;
+}
+
+/* Gallery modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(90vw, 560px);
+  max-height: 100%;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.modal-close svg { width: 20px; height: 20px; }
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-nav:hover { background: rgba(0, 0, 0, 0.7); }
+.modal-nav svg { width: 20px; height: 20px; }
+.modal-nav-prev { left: -1.25rem; }
+.modal-nav-next { right: -1.25rem; }
+
+.modal-counter {
+  position: absolute;
+  bottom: -2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.82rem;
+  color: #fff;
 }
 </style>

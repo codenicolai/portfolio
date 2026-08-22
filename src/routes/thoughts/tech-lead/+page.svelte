@@ -23,7 +23,7 @@ import { base } from "$app/paths";
 
 <style>
 .detail-container {
-  width: 52vw;
+  width: 40vw;
   margin: 2rem auto 5rem auto;
   display: flex;
   flex-direction: column;
