@@ -1,7 +1,7 @@
 <script>
   import { base } from '$app/paths';
 
-  const achievements = [
+  const rawAchievements = [
     {
       stat: '50%',
       title: 'Smaller Production Bundle',
@@ -21,6 +21,52 @@
       desc: 'Led a team of 6 developers and QAs for 3 years as Technical Lead, driving discovery, estimates, and delivery in a fast-paced, high-performance environment.'
     }
   ];
+
+  const achievements = rawAchievements.map((item) => {
+    const match = item.stat.match(/^(\d+(?:\.\d+)?)(.*)$/);
+    return {
+      ...item,
+      statValue: match ? Number.parseFloat(match[1]) : 0,
+      statSuffix: match ? match[2] : ''
+    };
+  });
+
+  function countUp(node, { value, suffix, duration = 1800 }) {
+    let started = false;
+
+    function run() {
+      let startTime = null;
+      function step(ts) {
+        if (startTime === null) startTime = ts;
+        const progress = Math.min((ts - startTime) / duration, 1);
+        const eased = 1 - (1 - progress) ** 5;
+        const current = Math.round(value * eased);
+        node.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && !started) {
+            started = true;
+            run();
+            observer.disconnect();
+          }
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(node);
+
+    return {
+      destroy() {
+        observer.disconnect();
+      }
+    };
+  }
 </script>
 
 <main class="detail-container">
@@ -36,7 +82,10 @@
   {#each achievements as item, i}
     <article class="achievement">
       <div class="achievement-top">
-        <span class="achievement-stat">{item.stat}</span>
+        <span
+          class="achievement-stat"
+          use:countUp={{ value: item.statValue, suffix: item.statSuffix }}
+        >0{item.statSuffix}</span>
         <div>
           <span class="achievement-tag">{item.tag}</span>
           <h2 class="achievement-title">{item.title}</h2>

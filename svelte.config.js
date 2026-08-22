@@ -7,7 +7,7 @@ export default {
 			assets: "build",
 		}),
 		paths: {
-			base: "/portfolio",
+			base: "",
 			relative: false,
 		},
 	},

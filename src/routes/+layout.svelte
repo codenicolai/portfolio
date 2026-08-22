@@ -1,31 +1,36 @@
 <script lang="ts">
-  import favicon from "$lib/assets/favicon.png";
-  import avatar from "$lib/assets/avatar.png";
-  import { base } from "$app/paths";
-  import { onMount } from 'svelte';
+import favicon from "$lib/assets/favicon.png";
+import avatar from "$lib/assets/avatar.png";
+import { base } from "$app/paths";
+import { onMount } from "svelte";
 
-  let { children } = $props();
-  let isDark = $state(false);
-  let flipCount = $state(0);
+let { children } = $props();
+let isDark = $state(false);
+let flipCount = $state(0);
 
-  onMount(() => {
-    const saved = localStorage.getItem('theme');
-    isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    apply();
-  });
+onMount(() => {
+	const saved = localStorage.getItem("theme");
+	isDark = saved
+		? saved === "dark"
+		: window.matchMedia("(prefers-color-scheme: dark)").matches;
+	apply();
+});
 
-  function toggle() {
-    isDark = !isDark;
-    flipCount += 1;
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    apply();
-  }
+function toggle() {
+	isDark = !isDark;
+	flipCount += 1;
+	localStorage.setItem("theme", isDark ? "dark" : "light");
+	apply();
+}
 
-  function apply() {
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', isDark ? '#404b54' : '#f8f8f8');
-  }
+function apply() {
+	document.documentElement.setAttribute(
+		"data-theme",
+		isDark ? "dark" : "light",
+	);
+	const meta = document.querySelector('meta[name="theme-color"]');
+	if (meta) meta.setAttribute("content", isDark ? "#404b54" : "#f8f8f8");
+}
 </script>
 
 <svelte:head>
@@ -62,6 +67,8 @@
 </nav>
 
 {@render children()}
+
+<footer class="footer">© 2022 Leonardo Nicolai</footer>
 
 <style>
   @import "../app.css";
@@ -149,5 +156,15 @@
   .icon-coin svg {
     width: 16px;
     height: 16px;
+  }
+
+  .footer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2rem 2rem 1.5rem 2rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
   }
 </style>
