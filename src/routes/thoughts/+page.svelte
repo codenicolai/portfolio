@@ -13,6 +13,14 @@ import { base } from "$app/paths";
   <h1 class="detail-title">Thoughts</h1>
   <p class="detail-subtitle">Notes on tech, Javascript, and the job.</p>
 
+  <a href="{base}/thoughts/brasfoot-mac-port" class="post-item">
+    <span class="post-tag">AI · Mac</span>
+    <h2 class="post-title">I ported Brasfoot to Mac using Claude</h2>
+    <p class="post-date">August 21, 2026</p>
+  </a>
+
+  <div class="divider"></div>
+
   <a href="{base}/thoughts/tech-lead" class="post-item">
     <span class="post-tag">Leadership</span>
     <h2 class="post-title">Becoming a tech lead when you were just writing code</h2>

@@ -87,6 +87,7 @@ const projects = [
 		desc: "Corporate governance platform for managing assemblies, discussions, and voting, enhanced with AI for communication and decision-making.",
 		techs: [
 			{ icon: "react", label: "React" },
+			{ icon: "reactnative", label: "React Native" },
 			{ icon: "websockets", label: "WebSockets" },
 			{ icon: "openai", label: "OpenAI API" },
 			{ icon: "zoomsdk", label: "Zoom SDK" },
@@ -144,6 +145,7 @@ const projects = [
 		techs: [
 			{ icon: "flutter", label: "Flutter" },
 			{ icon: "dart", label: "Dart" },
+			{ icon: "uidesign", label: "UI/UX Design" },
 		],
 		contributions: [
 			"Income, expense, and budget tracking in a single mobile app",
