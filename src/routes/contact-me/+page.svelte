@@ -11,26 +11,28 @@ import { base } from "$app/paths";
   </a>
   <div class="title-row">
     <h1 class="detail-title">Contact me</h1>
-    <a
-      class="resume-btn"
-      href="{base}/Leonardo_Nicolai_Resume.pdf"
-      download="Leonardo_Nicolai_Resume.pdf"
-      aria-label="Download resume"
-      title="Download resume"
-    >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-        <polyline points="7 10 12 15 17 10" />
-        <line x1="12" y1="15" x2="12" y2="3" />
-      </svg>
-    </a>
+    <div class="resume-btn-wrapper">
+      <a
+        class="resume-btn"
+        href="{base}/Leonardo_Nicolai_Resume.pdf"
+        download="Leonardo_Nicolai_Resume.pdf"
+        aria-label="Download resume"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+      </a>
+      <span class="tooltip" role="tooltip">My resume</span>
+    </div>
   </div>
   <div class="detail-layout">
     <div class="detail-image">
         <img src="{base}/github_photo.png" alt="Contact me" />
     </div>
     <div class="detail-content">
-      <p>Fullstack engineer with 7+ years shipping products end to end. React on the front, Node, Express, and Prisma on the back. These days I lead a team of six as a technical lead, and I've spent enough time wiring AI into real products to know where it actually helps and where it's just noise.</p>
+      <p>7+ years turning ideas into shipped products, from scrappy MVPs to platforms serving hundreds of thousands of users. These days I lead a team of six as Technical Lead, and I care about the details most engineers skip past, from how a feature performs to how it actually feels to use.</p>
       <p>If something on this site resonated or if you're working on something interesting. I'm easy to reach.</p>
       <a href="https://github.com/codenicolai" class="contact-link" target="_blank" rel="noopener noreferrer">
         <svg class="contact-icon" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -73,6 +75,7 @@ import { base } from "$app/paths";
 .back-icon { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
 .title-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 0 0 2rem 0; }
 .detail-title { font-family: "Montserrat", sans-serif; font-size: 2rem; font-weight: 700; margin: 0; color: var(--color-text); }
+.resume-btn-wrapper { position: relative; display: inline-flex; flex-shrink: 0; }
 .resume-btn {
   width: 36px;
   height: 36px;
@@ -94,6 +97,38 @@ import { base } from "$app/paths";
 .resume-btn svg {
   width: 16px;
   height: 16px;
+}
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.32rem 0.65rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--color-text);
+}
+.resume-btn-wrapper:hover .tooltip,
+.resume-btn-wrapper:focus-within .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 .detail-layout { display: flex; flex-direction: column; gap: 1.5rem; }
 .detail-image { width: 100%; }

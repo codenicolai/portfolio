@@ -18,7 +18,7 @@ import { base } from "$app/paths";
   <section class="blog-item">
     <a href="{base}/skills" class="blog-link">
       <h2>Skills</h2>
-      <p>React, React Native, TypeScript, Node.js, but with a design eye.</p>
+      <p>React, React Native, TypeScript, Node.js, but with a eye on design.</p>
     </a>
   </section>
   

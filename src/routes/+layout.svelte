@@ -1,6 +1,7 @@
 <script lang="ts">
   import favicon from "$lib/assets/favicon.png";
   import avatar from "$lib/assets/avatar.png";
+  import { base } from "$app/paths";
   import { onMount } from 'svelte';
 
   let { children } = $props();
@@ -55,7 +56,7 @@
       {/if}
     </span>
   </button>
-  <a class="navbar-avatar" href="https://github.com/codenicolai" target="_blank" rel="noopener noreferrer" title="nicolai on GitHub">
+  <a class="navbar-avatar" href="{base}/contact-me" title="Contact me">
     <img src={avatar} alt="Avatar" />
   </a>
 </nav>

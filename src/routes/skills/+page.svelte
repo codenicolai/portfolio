@@ -75,7 +75,8 @@ const skillGroups = [
   <h1 class="detail-title">Skills</h1>
 
   <div class="detail-content">
-    <p class="intro">Software engineer with 7+ years of experience building scalable fullstack products, from React/React Native frontends to Node.js/Express APIs and Prisma-backed databases. Leads a team of 6 as Technical Lead, with a design eye that shows in the details.</p>
+    <p class="intro">I'm a software engineer with 7+ years of experience building and leading scalable, AI-integrated products. From React/React Native frontends to Node.js/Express APIs and some SQL too. I'm experienced working on the design side too, which I really like.</p>
+
 
     {#each skillGroups as group}
       <div class="skills-group">
