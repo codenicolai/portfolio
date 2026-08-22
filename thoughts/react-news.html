@@ -18,29 +18,30 @@
 			} catch(e) {}
 		</script>
 		
-		<link href="/portfolio/_app/immutable/assets/0.G-69MWZc.css" rel="stylesheet">
-		<link href="/portfolio/_app/immutable/assets/12.1387vO2b.css" rel="stylesheet">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/start.1ZowdNoj.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DRdYrOhp.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BG75QkX5.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/Dd5kX-VJ.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BCwjHkxY.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/app.Dg_ppCP-.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DeAbRUht.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BqnLgsCb.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/jNniZWi8.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BjbMnLAr.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/0.CFCVdAnv.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BFgiUodz.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/12.BAz-JTuF.js">
-		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DIQ3eIqK.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/portfolio/_app/immutable/assets/favicon.DlsIElkM.png"/><!---->
+		<link href="/portfolio/_app/immutable/assets/0.DVhpfCju.css" rel="stylesheet">
+		<link href="/portfolio/_app/immutable/assets/13.JrfjEziU.css" rel="stylesheet">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/start.BefvdCGv.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/CsZRo4fB.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/R5FArs3E.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/CEB9QO63.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DL4MI_lM.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/entry/app.BvcqL-Vs.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/B4ppyxjv.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/ClpJ84CK.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/DJHSKtXK.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/BtDysOxi.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/0.CgLMItJ2.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/CiH6uBNR.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/9BzUVAYX.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/nodes/13.Dw0u2WtQ.js">
+		<link rel="modulepreload" href="/portfolio/_app/immutable/chunks/B4anSkpD.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/portfolio/_app/immutable/assets/favicon.DlsIElkM.png"/><!---->
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button> <a class="navbar-avatar svelte-12qhfyh" href="https://github.com/codenicolai" target="_blank" rel="noopener noreferrer" title="nicolai on GitHub"><img src="/portfolio/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><main class="detail-container svelte-yqi3cx"><a href="/portfolio/thoughts" class="back-link svelte-yqi3cx"><svg class="back-icon svelte-yqi3cx" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-yqi3cx">React · News</span> <h1 class="post-title svelte-yqi3cx">What's actually changed in React lately</h1> <p class="post-date svelte-yqi3cx">March 18, 2025</p> <p class="post-body svelte-yqi3cx">React 19 actually shipped something this time. Two things stuck with me: the compiler finally being real, and <code class="svelte-yqi3cx">use()</code>. The compiler kills most of the reason I was ever writing <code class="svelte-yqi3cx">useCallback</code> everywhere. <code class="svelte-yqi3cx">use()</code> lets you read a promise or context from inside any component, not just at the top, which quietly fixes a bunch of awkward async patterns I'd been working around for years.</p> <p class="post-body svelte-yqi3cx">We moved a few data-fetching flows off the classic <code class="svelte-yqi3cx">useEffect</code> plus <code class="svelte-yqi3cx">useState</code> combo and onto Suspense with <code class="svelte-yqi3cx">use()</code>. The difference showed up immediately in the traces. A settings page that used to fire three requests one after another, each waiting on the last, went from about 900ms to roughly 350ms once they ran in parallel and Suspense handled the loading states. Nothing clever about it — the new primitives just made the right behavior the easy one to write.</p> <p class="post-body svelte-yqi3cx"><code class="svelte-yqi3cx">useTransition</code> has been around since 18 but I lean on it a lot more now. Marking an update as non-urgent so the UI doesn't freeze during a heavy render, pair it with <code class="svelte-yqi3cx">useDeferredValue</code>, and you've got real tools for perceived performance without pulling in another library.</p> <p class="post-body svelte-yqi3cx">Server Components are the part that's still settling for me, if I'm honest. Splitting a component tree across server and client is a genuinely different model from what most of us built for a decade. It's not a drop-in upgrade, it's a rethink of where your data fetching even lives. Cautiously into it, especially now that Next.js has made the boundaries less confusing.</p></main><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><span class="icon-coin svelte-12qhfyh" style="transform: rotateY(0deg)"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></span></button> <a class="navbar-avatar svelte-12qhfyh" href="/portfolio/contact-me" title="Contact me"><img src="/portfolio/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><main class="detail-container svelte-yqi3cx"><a href="/portfolio/thoughts" class="back-link svelte-yqi3cx"><svg class="back-icon svelte-yqi3cx" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-yqi3cx">React · News</span> <h1 class="post-title svelte-yqi3cx">What's actually changed in React lately</h1> <p class="post-date svelte-yqi3cx">March 18, 2025</p> <p class="post-body svelte-yqi3cx">React 19 actually shipped something this time. Two things stuck with me: the compiler finally being real, and <code class="svelte-yqi3cx">use()</code>. The compiler kills most of the reason I was ever writing <code class="svelte-yqi3cx">useCallback</code> everywhere. <code class="svelte-yqi3cx">use()</code> lets you read a promise or context from inside any component, not just at the top, which quietly fixes a bunch of awkward async patterns I'd been working around for years.</p> <p class="post-body svelte-yqi3cx">We moved a few data-fetching flows off the classic <code class="svelte-yqi3cx">useEffect</code> plus <code class="svelte-yqi3cx">useState</code> combo and onto Suspense with <code class="svelte-yqi3cx">use()</code>. The difference showed up immediately in the traces. A settings page that used to fire three requests one after another, each waiting on the last, went from about 900ms to roughly 350ms once they ran in parallel and Suspense handled the loading states. Nothing clever about it — the new primitives just made the right behavior the easy one to write.</p> <p class="post-body svelte-yqi3cx"><code class="svelte-yqi3cx">useTransition</code> has been around since 18 but I lean on it a lot more now. Marking an update as non-urgent so the UI doesn't freeze during a heavy render, pair it with <code class="svelte-yqi3cx">useDeferredValue</code>, and you've got real tools for perceived performance without pulling in another library.</p> <p class="post-body svelte-yqi3cx">Server Components are the part that's still settling for me, if I'm honest. Splitting a component tree across server and client is a genuinely different model from what most of us built for a decade. It's not a drop-in upgrade, it's a rethink of where your data fetching even lives. Cautiously into it, especially now that Next.js has made the boundaries less confusing.</p></main><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1surd9b = {
+					__sveltekit_8fopgf = {
 						base: "/portfolio",
 						assets: "/portfolio"
 					};
@@ -48,11 +49,11 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/portfolio/_app/immutable/entry/start.1ZowdNoj.js"),
-						import("/portfolio/_app/immutable/entry/app.Dg_ppCP-.js")
+						import("/portfolio/_app/immutable/entry/start.BefvdCGv.js"),
+						import("/portfolio/_app/immutable/entry/app.BvcqL-Vs.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 12],
+							node_ids: [0, 13],
 							data: [null,null],
 							form: null,
 							error: null
