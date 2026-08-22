@@ -25,6 +25,7 @@ import { base } from "$app/paths";
   <section class="blog-item">
     <a href="{base}/projects" class="blog-link">
       <h2>Projects</h2>
+      
       <p>Work and personal builds.</p>
     </a>
   </section>
