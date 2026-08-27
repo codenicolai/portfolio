@@ -73,6 +73,18 @@ const skillGroups = [
 		],
 	},
 ];
+
+// Shuffle each badge's entrance delay so they don't rise in left-to-right order.
+const allSkills = skillGroups.flatMap((g) => g.skills);
+const shuffledRanks = allSkills.map((_, i) => i);
+for (let i = shuffledRanks.length - 1; i > 0; i--) {
+	const j = Math.floor(Math.random() * (i + 1));
+	[shuffledRanks[i], shuffledRanks[j]] = [shuffledRanks[j], shuffledRanks[i]];
+}
+const DELAY_STEP_MS = 22;
+allSkills.forEach((skill, i) => {
+	skill.delay = shuffledRanks[i] * DELAY_STEP_MS;
+});
 </script>
 
 <main class="detail-container">
@@ -94,7 +106,7 @@ const skillGroups = [
         <h3 class="group-label">{group.label}</h3>
         <div class="tags">
           {#each group.skills as skill}
-            <span class="tag">
+            <span class="tag" style="animation-delay: {skill.delay}ms">
               {#if skill.flag}
                 <span class="tag-icon tag-flag">{skill.flag}</span>
               {:else if skill.icon}
@@ -176,6 +188,24 @@ const skillGroups = [
   color: var(--color-text);
 }
 
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(58px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-title,
+  .tag {
+    animation: none;
+  }
+}
+
 .detail-content {
   display: flex;
   flex-direction: column;
@@ -201,7 +231,7 @@ const skillGroups = [
   color: var(--color-text-muted);
   margin: 0;
 }
-.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; overflow: hidden; padding-bottom: 2px; }
 .tag {
   display: inline-flex;
   align-items: center;
@@ -213,6 +243,7 @@ const skillGroups = [
   color: var(--color-tag-text);
   border-radius: 999px;
   padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+  animation: rise-in 0.54s cubic-bezier(0.33, 1, 0.68, 1) both;
 }
 .tag-icon {
   display: inline-flex;

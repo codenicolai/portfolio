@@ -20,7 +20,7 @@ import csv1 from "$lib/assets/csv1.png";
 import csv2 from "$lib/assets/csv2.png";
 import csv3 from "$lib/assets/csv3.png";
 
-const categories = ["All", "AI", "Frontend", "Websockets", "Backend", "UX/UI"];
+const categories = ["All", "AI", "Frontend", "Websockets", "UX/UI"];
 
 const projects = [
 	{
@@ -79,7 +79,7 @@ const projects = [
 		],
 		highlight:
 			"Used by 100+ concurrent call-center agents handling high-frequency updates per minute.",
-		categories: ["Websockets", "Backend", "Frontend"],
+		categories: ["Websockets", "Frontend"],
 	},
 	{
 		tag: "AI · Governance",
@@ -100,7 +100,7 @@ const projects = [
 		],
 		highlight:
 			"70% faster registration for complex assemblies, by automating assembly creation from PDF documents.",
-		categories: ["AI", "Websockets", "Backend"],
+		categories: ["AI", "Websockets"],
 		screenshots: [agm1, agm2, agm3, agm4, agm5, agm6, agm7, agm8, agm9, agm10],
 	},
 	{
@@ -186,7 +186,7 @@ const projects = [
 		],
 		highlight:
 			"Unblocked a Windows-only desktop game to run natively on macOS by replacing a hardcoded Windows-path check with a portable Java runtime handler.",
-		categories: ["Backend", "AI"],
+		categories: ["AI"],
 	},
 ];
 
