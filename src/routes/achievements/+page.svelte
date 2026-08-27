@@ -1,72 +1,78 @@
 <script>
-  import { base } from '$app/paths';
+import { base } from "$app/paths";
 
-  const rawAchievements = [
-    {
-      stat: '50%',
-      title: 'Smaller Production Bundle',
-      tag: 'Performance · Frontend',
-      desc: "Cut a Vite application's bundle size in half by auditing and removing barrel-file re-exports, improving load performance across the product."
-    },
-    {
-      stat: '70%',
-      title: 'Faster Complex Assembly Registration',
-      tag: 'AI · Product',
-      desc: 'Built an AI-powered feature that auto-generates shareholder assemblies from PDF documents, cutting registration time by up to 70% for complex assemblies.'
-    },
-    {
-      stat: '3 yrs',
-      title: 'Leading a High-Performance Team',
-      tag: 'Leadership',
-      desc: 'Led a team of 6 developers and QAs for 3 years as Technical Lead, driving discovery, estimates, and delivery in a fast-paced, high-performance environment.'
-    }
-  ];
+const rawAchievements = [
+	{
+		stat: "50%",
+		title: "Smaller Production Bundle",
+		tag: "Performance · Frontend",
+		desc: "Cut a Vite application's bundle size in half by auditing and removing barrel-file re-exports, improving load performance across the product.",
+	},
+	{
+		stat: "70%",
+		title: "Faster Complex Assembly Registration",
+		tag: "AI · Product",
+		desc: "Built an AI-powered feature that auto-generates shareholder assemblies from PDF documents, cutting registration time by up to 70% for complex assemblies.",
+	},
+	{
+		stat: "3 yrs",
+		title: "Leading a High-Performance Team",
+		tag: "Leadership",
+		desc: "Led a team of 6 developers and QAs for 3 years as Technical Lead, driving discovery, estimates, and delivery in a fast-paced, high-performance environment.",
+	},
+	{
+		stat: "",
+		title: "Dyte Sdk Migration to the Cloudflare Ecosystem",
+		tag: "Infrastructure · Cross-Platform",
+		desc: "Migrated the Dyte SDK to the Cloudflare ecosystem across both the React and React Native codebases, resolving cross-platform dependency chains, applying targeted patches, and adjusting CI/CD build configs to keep communication working on both platforms post-migration.",
+	},
+];
 
-  const achievements = rawAchievements.map((item) => {
-    const match = item.stat.match(/^(\d+(?:\.\d+)?)(.*)$/);
-    return {
-      ...item,
-      statValue: match ? Number.parseFloat(match[1]) : 0,
-      statSuffix: match ? match[2] : ''
-    };
-  });
+const achievements = rawAchievements.map((item) => {
+	const match = item.stat.match(/^(\d+(?:\.\d+)?)(.*)$/);
+	return {
+		...item,
+		statValue: match ? Number.parseFloat(match[1]) : 0,
+		statSuffix: match ? match[2] : "",
+	};
+});
 
-  function countUp(node, { value, suffix, duration = 1800 }) {
-    let started = false;
+function countUp(node, { value, suffix, duration = 1800 }) {
+	let started = false;
 
-    function run() {
-      let startTime = null;
-      function step(ts) {
-        if (startTime === null) startTime = ts;
-        const progress = Math.min((ts - startTime) / duration, 1);
-        const eased = 1 - (1 - progress) ** 5;
-        const current = Math.round(value * eased);
-        node.textContent = current + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
+	function run() {
+		let startTime = null;
+		function step(ts) {
+			if (startTime === null) startTime = ts;
+			const progress = Math.min((ts - startTime) / duration, 1);
+			const eased = 1 - (1 - progress) ** 5;
+			const current = Math.round(value * eased);
+			node.textContent = current + suffix;
+			if (progress < 1) requestAnimationFrame(step);
+		}
+		requestAnimationFrame(step);
+	}
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting && !started) {
-            started = true;
-            run();
-            observer.disconnect();
-          }
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(node);
+	const observer = new IntersectionObserver(
+		(entries) => {
+			for (const entry of entries) {
+				if (entry.isIntersecting && !started) {
+					started = true;
+					run();
+					observer.disconnect();
+				}
+			}
+		},
+		{ threshold: 0.3 },
+	);
+	observer.observe(node);
 
-    return {
-      destroy() {
-        observer.disconnect();
-      }
-    };
-  }
+	return {
+		destroy() {
+			observer.disconnect();
+		},
+	};
+}
 </script>
 
 <main class="detail-container">
@@ -81,15 +87,15 @@
 
   {#each achievements as item, i}
     <article class="achievement">
+      <span class="achievement-tag">{item.tag}</span>
       <div class="achievement-top">
-        <span
-          class="achievement-stat"
-          use:countUp={{ value: item.statValue, suffix: item.statSuffix }}
-        >0{item.statSuffix}</span>
-        <div>
-          <span class="achievement-tag">{item.tag}</span>
-          <h2 class="achievement-title">{item.title}</h2>
-        </div>
+        {#if item.stat}
+          <span
+            class="achievement-stat"
+            use:countUp={{ value: item.statValue, suffix: item.statSuffix }}
+          >0{item.statSuffix}</span>
+        {/if}
+        <h2 class="achievement-title">{item.title}</h2>
       </div>
       <p class="achievement-desc">{item.desc}</p>
     </article>
@@ -135,7 +141,7 @@
 
 .achievement-top {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
 }
 
