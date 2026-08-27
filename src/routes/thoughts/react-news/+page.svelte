@@ -44,7 +44,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-ruby);
+  color: var(--color-sapphire);
 }
 
 .post-title {

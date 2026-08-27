@@ -16,7 +16,7 @@
 	--color-accent: #7331d5;
 	--color-accent-to: #954af6;
 	--color-accent-subtle: rgba(128, 40, 243, 0.06);
-	--color-ruby: #e0115f;
+	--color-sapphire: #0f52ba;
 	--color-emerald: #50c878;
 }
 
@@ -38,7 +38,7 @@
 	--color-accent: #918dfc;
 	--color-accent-to: #c4bfff;
 	--color-accent-subtle: rgba(145, 141, 252, 0.12);
-	--color-ruby: #ffffff;
+	--color-sapphire: #f6f6f6;
 }
 
 body {

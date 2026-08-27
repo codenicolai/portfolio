@@ -261,7 +261,7 @@ const skillGroups = [
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: var(--color-ruby);
+  background: var(--color-sapphire);
   flex-shrink: 0;
   margin-top: 4px;
   position: relative;

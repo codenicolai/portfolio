@@ -419,7 +419,7 @@ function handleKeydown(e) {
   cursor: pointer;
 }
 .card-overlay-link:focus-visible {
-  outline: 2px solid var(--color-ruby);
+  outline: 2px solid var(--color-sapphire);
   outline-offset: 4px;
   border-radius: 10px;
 }
@@ -430,7 +430,7 @@ function handleKeydown(e) {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-ruby);
+  color: var(--color-sapphire);
   display: block;
   margin-bottom: 0.3rem;
 }
@@ -467,7 +467,7 @@ function handleKeydown(e) {
   transition: color 0.2s;
 }
 .gallery-btn:hover {
-  color: var(--color-ruby);
+  color: var(--color-sapphire);
 }
 .gallery-btn svg {
   width: 16px;

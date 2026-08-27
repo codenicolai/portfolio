@@ -43,7 +43,7 @@ import { base } from "$app/paths";
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-ruby);
+  color: var(--color-sapphire);
 }
 
 .post-title {
@@ -71,7 +71,7 @@ import { base } from "$app/paths";
 }
 
 .post-link {
-  color: var(--color-ruby);
+  color: var(--color-sapphire);
   font-weight: 600;
   text-decoration: none;
 }

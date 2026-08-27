@@ -149,7 +149,7 @@ function countUp(node, { value, suffix, duration = 1800 }) {
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--color-ruby);
+  color: var(--color-sapphire);
   line-height: 1;
   flex-shrink: 0;
 }
@@ -160,7 +160,7 @@ function countUp(node, { value, suffix, duration = 1800 }) {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-ruby);
+  color: var(--color-sapphire);
   display: block;
   margin-bottom: 0.35rem;
 }
