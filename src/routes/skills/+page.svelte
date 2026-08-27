@@ -13,22 +13,33 @@ const skillGroups = [
 		],
 	},
 	{
-		label: "Frontend",
+		label: "Other Frameworks",
 		skills: [
-			{ name: "React Native", icon: "react", flag: null },
-			{ name: "Electron", icon: "electron", flag: null },
+			{ name: "React Native", icon: "reactnative", flag: null },
+			{ name: "Nest.js", icon: "nestjs", flag: null },
 			{ name: "Svelte", icon: "svelte", flag: null },
-			{ name: "Zustand", icon: "zustand", flag: null },
+			{ name: "Electron", icon: "electron", flag: null },
 		],
 	},
 	{
-		label: "Backend & APIs",
+		label: "Libraries",
 		skills: [
-			{ name: "Nest.js", icon: "nestjs", flag: null },
-			{ name: "GraphQL", icon: "graphql", flag: null },
+			{ name: "Zustand", icon: "zustand", flag: null },
 			{ name: "Apollo GraphQL", icon: "apollographql", flag: null },
+			{ name: "Styled Components", icon: "styledcomponents", flag: null },
+			{ name: "Tailwind CSS", icon: "tailwind", flag: null },
+			{ name: "TanStack Query", icon: "tanstack", flag: null },
+			{ name: "React Testing Library", icon: "testinglibrary", flag: null },
+			{ name: "Cypress", icon: "cypress", flag: null },
+		],
+	},
+	{
+		label: "APIs & Protocols",
+		skills: [
+			{ name: "GraphQL", icon: "graphql", flag: null },
 			{ name: "REST APIs", icon: "restapis", flag: null },
-			{ name: "Flask", icon: "flask", flag: null },
+			{ name: "WebSockets", icon: "websockets", flag: null },
+			{ name: "OpenAI API", icon: "openai", flag: null },
 		],
 	},
 	{
@@ -46,8 +57,8 @@ const skillGroups = [
 		skills: [
 			{ name: "Git / GitHub", icon: "github", flag: null },
 			{ name: "Vite", icon: "vite", flag: null },
-			{ name: "Cypress", icon: "cypress", flag: null },
 			{ name: "Cucumber", icon: "cucumber", flag: null },
+			{ name: "Storybook", icon: "storybook", flag: null },
 			{ name: "Linux", icon: "linux", flag: null },
 			{ name: "Scrum / Agile", icon: "agile", flag: null },
 			{ name: "AI Agents", icon: "aiagents", flag: null },

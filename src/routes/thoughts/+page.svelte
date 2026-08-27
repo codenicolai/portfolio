@@ -19,7 +19,6 @@ import { base } from "$app/paths";
     <p class="post-date">August 21, 2026</p>
   </a>
 
-  <div class="divider"></div>
 
   <a href="{base}/thoughts/tech-lead" class="post-item">
     <span class="post-tag">Leadership</span>
@@ -27,7 +26,6 @@ import { base } from "$app/paths";
     <p class="post-date">April 2, 2026</p>
   </a>
 
-  <div class="divider"></div>
 
   <a href="{base}/thoughts/barrel-files" class="post-item">
     <span class="post-tag">React</span>
@@ -35,7 +33,6 @@ import { base } from "$app/paths";
     <p class="post-date">January 14, 2026</p>
   </a>
 
-  <div class="divider"></div>
 
   <a href="{base}/thoughts/memoization-react" class="post-item">
     <span class="post-tag">React</span>
@@ -43,7 +40,6 @@ import { base } from "$app/paths";
     <p class="post-date">October 30, 2025</p>
   </a>
 
-  <div class="divider"></div>
 
   <a href="{base}/thoughts/react-news" class="post-item">
     <span class="post-tag">React</span>
@@ -91,6 +87,7 @@ import { base } from "$app/paths";
   text-decoration: none;
   transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1);
   will-change: transform;
+  margin-bottom: 15px;
 }
 .post-item:hover {
   transform: scale(1.01);
