@@ -28,7 +28,7 @@ import { base } from "$app/paths";
   flex-direction: column;
   gap: 1.15rem;
 }
-@media (max-width: 900px) { .detail-container { width: 88vw; } }
+@media (max-width: 768px) { .detail-container { width: 88vw; } }
 
 .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "Montserrat", sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); text-decoration: none; padding: 0.38rem 0.85rem 0.38rem 0.6rem; border-radius: 999px; border: 1px solid var(--color-border); background: transparent; transition: color 0.2s, border-color 0.2s, background 0.2s; margin-bottom: 0.5rem; align-self: flex-start; }
 .back-link:hover {

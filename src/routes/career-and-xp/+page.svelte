@@ -116,7 +116,7 @@ import { base } from "$app/paths";
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .detail-container { width: 88vw; }
 }
 

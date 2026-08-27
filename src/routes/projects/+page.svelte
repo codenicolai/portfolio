@@ -173,8 +173,8 @@ const projects = [
 	},
 	{
 		tag: "Desktop · Cross-Platform",
-		name: "Brasfoot: Windows to macOS Port",
-		desc: "Ported the Windows-only game Brasfoot to run natively on macOS, without relying on Windows emulation.",
+		name: "Windows game port to macOS",
+		desc: "Ported the Windows-only game to run natively on macOS, without relying on Windows emulation.",
 		techs: [
 			{ icon: "java", label: "Java" },
 			{ icon: "macos", label: "macOS" },

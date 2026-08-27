@@ -1,5 +1,5 @@
 <script>
-  import { base } from '$app/paths';
+import { base } from "$app/paths";
 </script>
 
 <main class="detail-container">
@@ -11,7 +11,7 @@
   </a>
 
   <span class="post-tag">AI · Mac</span>
-  <h1 class="post-title">I ported Brasfoot to Mac using Claude</h1>
+  <h1 class="post-title">I ported a Windows game to Mac using Claude</h1>
   <p class="post-date">August 21, 2026</p>
 
   <p class="post-body">Brasfoot, a lightweight Java-based Brazilian football manager game, only ever ran on Windows. It looks for Java through Windows-specific paths, which tools like GPTK and Crossover couldn't fake. So I paired with Claude to build a small abstraction layer that launches it properly on Mac.</p>
@@ -27,7 +27,7 @@
   flex-direction: column;
   gap: 1.15rem;
 }
-@media (max-width: 900px) { .detail-container { width: 88vw; } }
+@media (max-width: 768px) { .detail-container { width: 88vw; } }
 
 .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "Montserrat", sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); text-decoration: none; padding: 0.38rem 0.85rem 0.38rem 0.6rem; border-radius: 999px; border: 1px solid var(--color-border); background: transparent; transition: color 0.2s, border-color 0.2s, background 0.2s; margin-bottom: 0.5rem; align-self: flex-start; }
 .back-link:hover {

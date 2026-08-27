@@ -13,9 +13,9 @@ import { base } from "$app/paths";
   <h1 class="detail-title">Thoughts</h1>
   <p class="detail-subtitle">Notes on tech, Javascript, and the job.</p>
 
-  <a href="{base}/thoughts/brasfoot-mac-port" class="post-item">
-    <span class="post-tag">AI · Mac</span>
-    <h2 class="post-title">I ported Brasfoot to Mac using Claude</h2>
+  <a href="{base}/thoughts/game-mac-port" class="post-item">
+    <span class="post-tag">AI</span>
+    <h2 class="post-title">I ported a Windows game to Mac using Claude</h2>
     <p class="post-date">August 21, 2026</p>
   </a>
 
@@ -46,7 +46,7 @@ import { base } from "$app/paths";
   <div class="divider"></div>
 
   <a href="{base}/thoughts/react-news" class="post-item">
-    <span class="post-tag">React · News</span>
+    <span class="post-tag">React</span>
     <h2 class="post-title">What's actually changed in React lately</h2>
     <p class="post-date">March 18, 2025</p>
   </a>
@@ -59,7 +59,7 @@ import { base } from "$app/paths";
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 900px) { .detail-container { width: 88vw; } }
+@media (max-width: 768px) { .detail-container { width: 88vw; } }
 
 .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "Montserrat", sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--color-text-muted); text-decoration: none; padding: 0.38rem 0.85rem 0.38rem 0.6rem; border-radius: 999px; border: 1px solid var(--color-border); background: transparent; transition: color 0.2s, border-color 0.2s, background 0.2s; margin-bottom: 1.5rem; align-self: flex-start; }
 .back-link:hover {
