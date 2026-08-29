@@ -20,37 +20,37 @@
 		
 		<link href="/_app/immutable/assets/0.CRxu39hj.css" rel="stylesheet">
 		<link href="/_app/immutable/assets/10.DipaO2Sg.css" rel="stylesheet">
-		<link rel="modulepreload" href="/_app/immutable/entry/start.DsfFyYYn.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.DCYlI7r5.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/B3ZD-apt.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/CZTDfgws.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/V7d73PUE.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/qLDcXLeM.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.BWVEhmSj.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.CZDK2yLH.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/Dp8P1QWF.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/BVE9ceWD.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/IlwYdEp4.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/CyUTiQYM.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/BFlDtO7w.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/0.BHfJWanB.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/0.CgwNTSv2.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/Dj4Ab-dW.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/Cuf-KRm5.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/10.JEPeknIj.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/qnfddLEX.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/10.C-EPDTTh.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/DTXcQHuv.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/DMpHZy27.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/_app/immutable/assets/favicon.DlsIElkM.png"/><!----><!--gsrl61--><meta name="description" content="What happens when barrel-file re-exports meet a growing codebase: slower builds, deep import chains, and 1,600 module requests on a single page load."/> <link rel="canonical" href="https://codenicolai.github.io/thoughts/barrel-files"/> <!--[!--><!--]--> <meta property="og:type" content="article"/> <meta property="og:site_name" content="Leonardo Nicolai"/> <meta property="og:title" content="The hidden cost of barrel files — Leonardo Nicolai"/> <meta property="og:description" content="What happens when barrel-file re-exports meet a growing codebase: slower builds, deep import chains, and 1,600 module requests on a single page load."/> <meta property="og:url" content="https://codenicolai.github.io/thoughts/barrel-files"/> <meta property="og:image" content="https://codenicolai.github.io/github_photo.png"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="The hidden cost of barrel files — Leonardo Nicolai"/> <meta name="twitter:description" content="What happens when barrel-file re-exports meet a growing codebase: slower builds, deep import chains, and 1,600 module requests on a single page load."/> <meta name="twitter:image" content="https://codenicolai.github.io/github_photo.png"/><!----><title>The hidden cost of barrel files — Leonardo Nicolai</title>
+		<link rel="modulepreload" href="/_app/immutable/chunks/GzMnyUOo.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/_app/immutable/assets/favicon.DlsIElkM.png"/><!----><!--gsrl61--><meta name="description" content="What happens when barrel-file re-exports meet a growing codebase: slower builds, deep import chains, and 1,600 module requests on a single page load."/> <link rel="canonical" href="https://codenicolai.github.io/thoughts/barrel-files"/> <!--[!--><!--]--> <meta property="og:type" content="article"/> <meta property="og:site_name" content="Leonardo Nicolai"/> <meta property="og:title" content="The hidden cost of barrel files — Leonardo Nicolai"/> <meta property="og:description" content="What happens when barrel-file re-exports meet a growing codebase: slower builds, deep import chains, and 1,600 module requests on a single page load."/> <meta property="og:url" content="https://codenicolai.github.io/thoughts/barrel-files"/> <meta property="og:image" content="https://codenicolai.github.io/github_photo.png"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="The hidden cost of barrel files — Leonardo Nicolai"/> <meta name="twitter:description" content="What happens when barrel-file re-exports meet a growing codebase: slower builds, deep import chains, and 1,600 module requests on a single page load."/> <meta name="twitter:image" content="https://codenicolai.github.io/github_photo.png"/><!----><title>The hidden cost of barrel files — Leonardo Nicolai</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><span class="icon-coin svelte-12qhfyh" style="transform: rotateY(0deg)"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></span></button> <a class="navbar-avatar svelte-12qhfyh" href="/contact-me" title="Contact me"><img src="/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><!----> <main class="detail-container svelte-yh940m"><a href="/thoughts" class="back-link svelte-yh940m"><svg class="back-icon svelte-yh940m" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-yh940m">React</span> <h1 class="post-title svelte-yh940m">The hidden cost of barrel files</h1> <p class="post-date svelte-yh940m">January 14, 2026</p> <p class="post-body svelte-yh940m">I used to love barrel files. Those <code class="svelte-yh940m">index.ts</code> files that re-export everything from a folder, so you get one tidy import instead of five. No digging through the filesystem to find the right path. What's not to like? Turns out plenty, once a codebase grows past "small."</p> <p class="post-body svelte-yh940m">The problem is bundlers have to parse the whole barrel to figure out what's actually being used. Tree-shaking helps, but not as much as people assume. Circular dependencies sneak in quietly, import chains get deep, and modules start evaluating way earlier than they need to. I watched a team's build times creep up for weeks before anyone connected it to the barrels they'd standardized on.</p> <p class="post-body svelte-yh940m">On one dashboard project I was debugging, I opened the Network tab on a cold load out of curiosity and counted over 1,600 module requests. Sixteen hundred. Not all of that was barrels, but after I went through and switched the feature folders to direct imports, keeping barrels only around the design system, it settled down to somewhere between 900 and 1,100 depending on the route. Vite's build got a few seconds faster too. Nobody on the team really noticed the change, which is honestly how you know infrastructure work went well.</p> <p class="post-body svelte-yh940m">My rule now: direct imports for anything performance-sensitive, barrels only for things that are genuinely public, a library's surface, a shared design system. Not every folder that happens to have more than one file in it.</p></main><!----><!----> <footer class="footer svelte-12qhfyh">© 2022 Leonardo Nicolai</footer><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_ldnz5f = {
+					__sveltekit_beuqgq = {
 						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.DsfFyYYn.js"),
-						import("/_app/immutable/entry/app.BWVEhmSj.js")
+						import("/_app/immutable/entry/start.DCYlI7r5.js"),
+						import("/_app/immutable/entry/app.CZDK2yLH.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 10],

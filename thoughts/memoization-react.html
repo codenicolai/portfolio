@@ -20,37 +20,37 @@
 		
 		<link href="/_app/immutable/assets/0.CRxu39hj.css" rel="stylesheet">
 		<link href="/_app/immutable/assets/13.D3AGNZQx.css" rel="stylesheet">
-		<link rel="modulepreload" href="/_app/immutable/entry/start.DsfFyYYn.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.DCYlI7r5.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/B3ZD-apt.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/CZTDfgws.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/V7d73PUE.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/qLDcXLeM.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.BWVEhmSj.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.CZDK2yLH.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/Dp8P1QWF.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/BVE9ceWD.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/IlwYdEp4.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/CyUTiQYM.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/BFlDtO7w.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/0.BHfJWanB.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/0.CgwNTSv2.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/Dj4Ab-dW.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/Cuf-KRm5.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/13.BfE1ggmY.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/qnfddLEX.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/13.DhKKBmzp.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/DTXcQHuv.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/DMpHZy27.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/_app/immutable/assets/favicon.DlsIElkM.png"/><!----><!--gsrl61--><meta name="description" content="useMemo and useCallback everywhere isn't a performance strategy. Notes on measuring first, and what the React Compiler changes."/> <link rel="canonical" href="https://codenicolai.github.io/thoughts/memoization-react"/> <!--[!--><!--]--> <meta property="og:type" content="article"/> <meta property="og:site_name" content="Leonardo Nicolai"/> <meta property="og:title" content="Memoization in React: when it helps and when it just adds noise — Leonardo Nicolai"/> <meta property="og:description" content="useMemo and useCallback everywhere isn't a performance strategy. Notes on measuring first, and what the React Compiler changes."/> <meta property="og:url" content="https://codenicolai.github.io/thoughts/memoization-react"/> <meta property="og:image" content="https://codenicolai.github.io/github_photo.png"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Memoization in React: when it helps and when it just adds noise — Leonardo Nicolai"/> <meta name="twitter:description" content="useMemo and useCallback everywhere isn't a performance strategy. Notes on measuring first, and what the React Compiler changes."/> <meta name="twitter:image" content="https://codenicolai.github.io/github_photo.png"/><!----><title>Memoization in React: when it helps and when it just adds noise — Leonardo Nicolai</title>
+		<link rel="modulepreload" href="/_app/immutable/chunks/GzMnyUOo.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/_app/immutable/assets/favicon.DlsIElkM.png"/><!----><!--gsrl61--><meta name="description" content="useMemo and useCallback everywhere isn't a performance strategy. Notes on measuring first, and what the React Compiler changes."/> <link rel="canonical" href="https://codenicolai.github.io/thoughts/memoization-react"/> <!--[!--><!--]--> <meta property="og:type" content="article"/> <meta property="og:site_name" content="Leonardo Nicolai"/> <meta property="og:title" content="Memoization in React: when it helps and when it just adds noise — Leonardo Nicolai"/> <meta property="og:description" content="useMemo and useCallback everywhere isn't a performance strategy. Notes on measuring first, and what the React Compiler changes."/> <meta property="og:url" content="https://codenicolai.github.io/thoughts/memoization-react"/> <meta property="og:image" content="https://codenicolai.github.io/github_photo.png"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="Memoization in React: when it helps and when it just adds noise — Leonardo Nicolai"/> <meta name="twitter:description" content="useMemo and useCallback everywhere isn't a performance strategy. Notes on measuring first, and what the React Compiler changes."/> <meta name="twitter:image" content="https://codenicolai.github.io/github_photo.png"/><!----><title>Memoization in React: when it helps and when it just adds noise — Leonardo Nicolai</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><span class="icon-coin svelte-12qhfyh" style="transform: rotateY(0deg)"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></span></button> <a class="navbar-avatar svelte-12qhfyh" href="/contact-me" title="Contact me"><img src="/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><!----> <main class="detail-container svelte-7yjoky"><a href="/thoughts" class="back-link svelte-7yjoky"><svg class="back-icon svelte-7yjoky" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-7yjoky">React</span> <h1 class="post-title svelte-7yjoky">Memoization in React: when it helps and when it just adds noise</h1> <p class="post-date svelte-7yjoky">October 30, 2025</p> <p class="post-body svelte-7yjoky">There's a phase every React developer goes through where <code class="svelte-7yjoky">useMemo</code> and <code class="svelte-7yjoky">useCallback</code> end up on basically everything. I went through it too, hard. It feels responsible, like proof you actually cared about performance. Nobody tells you upfront that memoization isn't free, it costs memory, it costs readability, and it leaves you babysitting dependency arrays for the rest of that component's life.</p> <p class="post-body svelte-7yjoky">I had a filter panel once. A dozen checkboxes, a search box, wrapped top to bottom in <code class="svelte-7yjoky">useCallback</code> and <code class="svelte-7yjoky">useMemo</code> like a security blanket. Looked very responsible on paper. Then I actually opened the React Profiler and watched what was really happening: two re-renders per interaction, under a millisecond each. I was protecting a component from a performance problem it never had in its life. Ripped all of it out, deleted about thirty lines of dependency arrays, and the file was suddenly readable again for the first time in months.</p> <p class="post-body svelte-7yjoky">Because that's really the whole point of memoization, and it took me embarrassingly long to say out loud: you're telling React "you already did this work, don't do it again unless something actually changed." That's the entire deal. It's not a performance ritual you perform to look careful, it's a note about work that doesn't need repeating. If the work was never expensive to begin with, that note is pure overhead, you're paying to remember something nobody needed remembered.</p> <p class="post-body svelte-7yjoky">So the question I actually ask now is just: is this expensive enough that redoing it matters? Comparing primitives, cheap, do it a thousand times a second and nobody notices. Creating a plain object, cheap. What's expensive is re-rendering a heavy tree, or recalculating something across hundreds of rows on every keystroke. If you can't point at the actual work being repeated, you don't have a case for memoizing it yet, you just have a feeling.</p> <p class="post-body svelte-7yjoky">With the React Compiler stable in 19, most of this manual bookkeeping is quietly going away, and honestly, good riddance. The skill that matters going forward isn't reaching for <code class="svelte-7yjoky">useMemo</code> out of habit, it's still knowing how to open the Profiler, see what's actually re-running, and recognize the handful of spots where the compiler still needs a human to point at the real work.</p></main><!----><!----> <footer class="footer svelte-12qhfyh">© 2022 Leonardo Nicolai</footer><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_ldnz5f = {
+					__sveltekit_beuqgq = {
 						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.DsfFyYYn.js"),
-						import("/_app/immutable/entry/app.BWVEhmSj.js")
+						import("/_app/immutable/entry/start.DCYlI7r5.js"),
+						import("/_app/immutable/entry/app.CZDK2yLH.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 13],
