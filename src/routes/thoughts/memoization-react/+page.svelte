@@ -1,6 +1,14 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo
+  title="Memoization in React: when it helps and when it just adds noise"
+  description="useMemo and useCallback everywhere isn't a performance strategy. Notes on measuring first, and what the React Compiler changes."
+  path="/thoughts/memoization-react"
+  type="article"
+/>
 
 <main class="detail-container">
   <a href="{base}/thoughts" class="back-link">
@@ -14,10 +22,11 @@ import { base } from "$app/paths";
   <h1 class="post-title">Memoization in React: when it helps and when it just adds noise</h1>
   <p class="post-date">October 30, 2025</p>
 
-  <p class="post-body">There's a phase every React developer goes through where <code>useMemo</code> and <code>useCallback</code> show up on basically everything. I went through it too. It feels responsible, like you're being careful with performance. Nobody tells you memoization has its own cost: more memory, more code to read, dependency arrays you now have to keep correct forever.</p>
-  <p class="post-body">I had a filter panel once, a dozen checkboxes and a search box, wrapped top to bottom in <code>useCallback</code> and <code>useMemo</code>. Looked very thorough. Then I actually opened the Profiler and watched it: two re-renders per interaction, under a millisecond each. We were paying for memoization on a component that had never had a performance problem in its life. Ripped it out, lost about 30 lines of dependency arrays, and the code was suddenly readable again. Memoization isn't the villain here. Not measuring first is.</p>
-  <p class="post-body">The question I ask now is just: is this actually expensive? Primitive comparisons, cheap. Creating an object, cheap. What's expensive is re-rendering a big tree, or recalculating something across hundreds of items on every keystroke. If you can't point to the problem, you probably don't have one yet.</p>
-  <p class="post-body">With the React Compiler stable in 19, most of this manual work is going away anyway, which honestly is a relief. The useful skill going forward isn't memoizing out of habit, it's knowing the few spots where the compiler still needs a hand.</p>
+  <p class="post-body">There's a phase every React developer goes through where <code>useMemo</code> and <code>useCallback</code> end up on basically everything. I went through it too, hard. It feels responsible, like proof you actually cared about performance. Nobody tells you upfront that memoization isn't free, it costs memory, it costs readability, and it leaves you babysitting dependency arrays for the rest of that component's life.</p>
+  <p class="post-body">I had a filter panel once. A dozen checkboxes, a search box, wrapped top to bottom in <code>useCallback</code> and <code>useMemo</code> like a security blanket. Looked very responsible on paper. Then I actually opened the <a class="post-link" href="https://react.dev/learn/react-developer-tools" target="_blank" rel="noopener noreferrer">React Profiler</a> and watched what was really happening: two re-renders per interaction, under a millisecond each. I was protecting a component from a performance problem it never had in its life. Ripped all of it out, deleted about thirty lines of dependency arrays, and the file was suddenly readable again for the first time in months.</p>
+  <p class="post-body">Because that's really the whole point of memoization, and it took me embarrassingly long to say out loud: you're telling React "you already did this work, don't do it again unless something actually changed." That's the entire deal. It's not a performance ritual you perform to look careful, it's a note about work that doesn't need repeating. If the work was never expensive to begin with, that note is pure overhead, you're paying to remember something nobody needed remembered.</p>
+  <p class="post-body">So the question I actually ask now is just: is this expensive enough that redoing it matters? Comparing primitives, cheap, do it a thousand times a second and nobody notices. Creating a plain object, cheap. What's expensive is re-rendering a heavy tree, or recalculating something across hundreds of rows on every keystroke. If you can't point at the actual work being repeated, you don't have a case for memoizing it yet, you just have a feeling.</p>
+  <p class="post-body">With the React Compiler stable in 19, most of this manual bookkeeping is quietly going away, and honestly, good riddance. The skill that matters going forward isn't reaching for <code>useMemo</code> out of habit, it's still knowing how to open the Profiler, see what's actually re-running, and recognize the handful of spots where the compiler still needs a human to point at the real work.</p>
 </main>
 
 <style>
@@ -69,6 +78,15 @@ import { base } from "$app/paths";
   color: var(--color-text-secondary);
   line-height: 1.85;
   margin: 0;
+}
+
+.post-link {
+  color: var(--color-sapphire);
+  font-weight: 600;
+  text-decoration: none;
+}
+.post-link:hover {
+  text-decoration: underline;
 }
 
 code {

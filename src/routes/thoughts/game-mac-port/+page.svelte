@@ -1,6 +1,14 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo
+  title="I ported a Windows game to Mac using Claude"
+  description="How Leonardo Nicolai paired with Claude to build a launcher abstraction that got a Windows-only Java game running natively on macOS."
+  path="/thoughts/game-mac-port"
+  type="article"
+/>
 
 <main class="detail-container">
   <a href="{base}/thoughts" class="back-link">

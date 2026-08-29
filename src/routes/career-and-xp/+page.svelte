@@ -1,6 +1,13 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo
+  title="Career & XP"
+  description="Career timeline, roles, and experience of Leonardo Nicolai, from intern to Technical Lead."
+  path="/career-and-xp"
+/>
 
 <main class="detail-container">
   <a href="{base}/" class="back-link">

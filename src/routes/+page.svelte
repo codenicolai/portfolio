@@ -1,6 +1,43 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Leonardo Nicolai",
+	jobTitle: "Technical Lead",
+	url: "https://codenicolai.github.io",
+	image: "https://codenicolai.github.io/github_photo.png",
+	sameAs: [
+		"https://github.com/codenicolai",
+		"https://www.linkedin.com/in/nicolaileonardo/",
+	],
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Florianópolis",
+		addressCountry: "BR",
+	},
+	knowsAbout: [
+		"React",
+		"React Native",
+		"TypeScript",
+		"Node.js",
+		"System Design",
+		"AI Integration",
+	],
+};
 </script>
+
+<Seo
+  title="Software Engineer & Technical Lead"
+  description="Portfolio of Leonardo Nicolai — a software engineer and technical lead with 7+ years building React, React Native, and Node.js products, from scrappy MVPs to platforms serving hundreds of thousands of users."
+  path="/"
+/>
+
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(personSchema)}<\/script>`}
+</svelte:head>
 
 <main class="blog-container">
   <section class="blog-title">
@@ -10,7 +47,7 @@ import { base } from "$app/paths";
   <section class="blog-item">
     <a href="{base}/thoughts" class="blog-link">
       <h2>Thoughts</h2>
-      <div class="blog-date">April 2, 2026</div>
+      <div class="blog-date">August 29, 2026</div>
       <p>Tech, leadership, and things worth writing down.</p>
     </a>
   </section>
@@ -21,6 +58,13 @@ import { base } from "$app/paths";
       <p>React, React Native, TypeScript, Node.js, but with a eye on design.</p>
     </a>
   </section>
+
+   <section class="blog-item">
+    <a href="{base}/achievements" class="blog-link">
+      <h2>Achievements</h2>
+      <p>Numbers behind the work.</p>
+    </a>
+  </section>
   
   <section class="blog-item">
     <a href="{base}/projects" class="blog-link">
@@ -29,12 +73,7 @@ import { base } from "$app/paths";
       <p>Work and personal builds.</p>
     </a>
   </section>
-  <section class="blog-item">
-    <a href="{base}/achievements" class="blog-link">
-      <h2>Achievements</h2>
-      <p>Numbers behind the work.</p>
-    </a>
-  </section>
+ 
   <section class="blog-item">
     <a href="{base}/career-and-xp" class="blog-link">
       <h2>Career &amp; XP</h2>

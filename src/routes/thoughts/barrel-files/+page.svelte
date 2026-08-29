@@ -1,6 +1,14 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo
+  title="The hidden cost of barrel files"
+  description="What happens when barrel-file re-exports meet a growing codebase: slower builds, deep import chains, and 1,600 module requests on a single page load."
+  path="/thoughts/barrel-files"
+  type="article"
+/>
 
 <main class="detail-container">
   <a href="{base}/thoughts" class="back-link">

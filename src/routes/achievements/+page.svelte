@@ -1,5 +1,6 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 
 const rawAchievements = [
 	{
@@ -74,6 +75,12 @@ function countUp(node, { value, suffix, duration = 1800 }) {
 	};
 }
 </script>
+
+<Seo
+  title="Achievements"
+  description="Numbers behind the work: performance wins, AI features, and leadership milestones from Leonardo Nicolai."
+  path="/achievements"
+/>
 
 <main class="detail-container">
   <a href="{base}/" class="back-link">

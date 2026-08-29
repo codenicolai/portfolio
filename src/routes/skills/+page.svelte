@@ -1,6 +1,7 @@
 <script>
 import { base } from "$app/paths";
 import { skillIcons } from "$lib/skillIcons.js";
+import Seo from "$lib/components/Seo.svelte";
 
 const skillGroups = [
 	{
@@ -86,6 +87,12 @@ allSkills.forEach((skill, i) => {
 	skill.delay = shuffledRanks[i] * DELAY_STEP_MS;
 });
 </script>
+
+<Seo
+  title="Skills"
+  description="React, React Native, TypeScript, Node.js, and the tools Leonardo Nicolai uses to build AI-integrated products."
+  path="/skills"
+/>
 
 <main class="detail-container">
   <a href="{base}/" class="back-link">

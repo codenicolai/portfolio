@@ -1,6 +1,13 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo
+  title="Thoughts"
+  description="Notes on tech, JavaScript, system design, and leadership from Leonardo Nicolai."
+  path="/thoughts"
+/>
 
 <main class="detail-container">
   <a href="{base}/" class="back-link">
@@ -12,6 +19,13 @@ import { base } from "$app/paths";
 
   <h1 class="detail-title">Thoughts</h1>
   <p class="detail-subtitle">Notes on tech, Javascript, and the job.</p>
+
+  <a href="{base}/thoughts/design-system-intro" class="post-item">
+    <span class="post-tag">System Design</span>
+    <h2 class="post-title">Getting started with system design</h2>
+    <p class="post-date">August 29, 2026</p>
+  </a>
+
 
   <a href="{base}/thoughts/game-mac-port" class="post-item">
     <span class="post-tag">AI</span>
@@ -41,11 +55,6 @@ import { base } from "$app/paths";
   </a>
 
 
-  <a href="{base}/thoughts/react-news" class="post-item">
-    <span class="post-tag">React</span>
-    <h2 class="post-title">What's actually changed in React lately</h2>
-    <p class="post-date">March 18, 2025</p>
-  </a>
 </main>
 
 <style>

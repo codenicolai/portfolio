@@ -1,6 +1,14 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo
+  title="Becoming a tech lead when you were just writing code"
+  description="Nobody warns you that the first real skill you need as a lead has nothing to do with architecture — notes on estimating, delegating, and trade-offs from Leonardo Nicolai."
+  path="/thoughts/tech-lead"
+  type="article"
+/>
 
 <main class="detail-container">
   <a href="{base}/thoughts" class="back-link">
@@ -15,7 +23,7 @@ import { base } from "$app/paths";
   <p class="post-date">April 2, 2026</p>
 
   <p class="post-body">Nobody warns you that the first real skill you need as a lead has nothing to do with architecture. It's estimating work you're not going to do yourself. When I was coding full time, I had a feel for how long things took, in my hands, in my head. Once I had a team, I was estimating for people with different skill levels, in parts of the codebase they didn't know as well as I did. My gut was useless for that. Took me longer than I'd like to admit to notice.</p>
-  <p class="post-body">These days I treat every deadline as a first guess, not a promise. It's almost always wrong, and that's fine — what matters is catching it early. Short check-ins, clear scope, and honestly, the harder part: building a team where someone can tell me "I'm stuck, this is going to take longer" without feeling like they messed up. I didn't get that from a process doc. I got it from watching how people reacted the first couple times it happened, mine included.</p>
+  <p class="post-body">These days I treat every deadline as a first guess, not a promise. It's almost always wrong, and that's fine, what matters is catching it early. Short check-ins, clear scope, and honestly, the harder part: building a team where someone can tell me "I'm stuck, this is going to take longer" without feeling like they messed up. I didn't get that from a process doc. I got it from watching how people reacted the first couple times it happened, mine included.</p>
   <p class="post-body">Trade-offs are basically the job now. Speed vs. safety, consistency vs. whatever the product actually needs this week. I used to always want the cleanest solution. But clean has a schedule cost, and sometimes the right move is the slightly uglier one that ships and doesn't block five other people. Saying "this is good enough for now, we'll revisit it" took practice. I still don't love saying it.</p>
   <p class="post-body">The bigger shift, honestly, was learning to stop fixing things myself. Early on I'd jump in because I could do it faster, and that felt helpful. It wasn't. It just meant people stayed dependent on me and I became the bottleneck. Letting someone do it differently than I would have, and accepting that "different" is usually just fine, that's most of what delegating actually is.</p>
   <p class="post-body">Coming from development helps in obvious ways. I know where the complexity actually hides, I can tell when someone's genuinely stuck versus spinning their wheels. But it also means I sometimes forget that what feels easy to me took me years to feel easy. Now when something isn't landing, I try to ask what would make it clearer instead of assuming it's an effort problem. Small change, better outcome.</p>

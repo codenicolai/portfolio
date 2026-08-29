@@ -1,6 +1,7 @@
 <script>
 import { base } from "$app/paths";
 import { skillIcons } from "$lib/skillIcons.js";
+import Seo from "$lib/components/Seo.svelte";
 import grana1 from "$lib/assets/grana1.png";
 import grana2 from "$lib/assets/grana2.png";
 import futSimulator1 from "$lib/assets/fut-simulator-1.png";
@@ -234,6 +235,12 @@ function handleKeydown(e) {
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
+
+<Seo
+  title="Projects"
+  description="AI-powered platforms, design systems, real-time monitoring, and performance work by Leonardo Nicolai."
+  path="/projects"
+/>
 
 <main class="detail-container">
   <a href="{base}/" class="back-link">

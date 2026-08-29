@@ -1,6 +1,13 @@
 <script>
 import { base } from "$app/paths";
+import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo
+  title="Contact"
+  description="Get in touch with Leonardo Nicolai, software engineer and technical lead based in Florianópolis, Brazil."
+  path="/contact-me"
+/>
 
 <main class="detail-container">
   <a href="{base}/" class="back-link">
