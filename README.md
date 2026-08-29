@@ -40,3 +40,17 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+## Deploying to GitHub Pages
+
+This project uses [`adapter-static`](https://svelte.dev/docs/kit/adapter-static) to prerender the site into the `build/` directory, and [`gh-pages`](https://www.npmjs.com/package/gh-pages) to publish that directory to the `gh-pages` branch.
+
+```sh
+# 1. build the static site into build/
+npm run build
+
+# 2. publish build/ to the gh-pages branch on origin
+npm run deploy
+```
+
+`npm run deploy` runs `gh-pages -d build --dotfiles`, which pushes the contents of `build/` (including dotfiles like `.nojekyll`) to the `gh-pages` branch. GitHub Pages serves that branch directly at [codenicolai.github.io](https://codenicolai.github.io).
