@@ -4,9 +4,6 @@ import { skillIcons } from "$lib/skillIcons.js";
 import Seo from "$lib/components/Seo.svelte";
 import grana1 from "$lib/assets/grana1.png";
 import grana2 from "$lib/assets/grana2.png";
-import futSimulator1 from "$lib/assets/fut-simulator-1.png";
-import futSimulator2 from "$lib/assets/fut-simulator-2.png";
-import futSimulator3 from "$lib/assets/fut-simulator-3.png";
 import agm1 from "$lib/assets/agm1.png";
 import agm2 from "$lib/assets/agm2.png";
 import agm3 from "$lib/assets/agm3.png";
@@ -26,17 +23,12 @@ const categories = ["All", "AI", "Frontend", "Websockets", "UX/UI"];
 const projects = [
 	{
 		tag: "Performance · Data",
-		name: "Atlas Governance: Large-Scale CSV Handling",
-		desc: "Frontend that makes datasets exceeding 500k rows viewable in real time, directly in the browser, without crashing or degrading the user experience.",
+		name: "Large-Scale CSV Handling",
+		desc: "Frontend that makes datasets exceeding 500k rows viewable in real time, directly in the browser, without crashing or degrading the user experience. Built infinite scroll and dynamic loading to render the dataset, optimized parsing and state management to avoid UI blocking, and maintained smooth interaction under continuous data load.",
 		techs: [
 			{ icon: "react", label: "React" },
 			{ icon: "infinitescroll", label: "Infinite Scroll" },
 			{ icon: "csvparsing", label: "CSV parsing" },
-		],
-		contributions: [
-			"Built infinite scroll and dynamic loading to render 500k+ row datasets",
-			"Optimized parsing and state management to avoid UI blocking",
-			"Maintained smooth interaction under continuous data load",
 		],
 		highlight:
 			"500K-row dataset made browsable through infinite scroll and dynamic loading.",
@@ -45,18 +37,13 @@ const projects = [
 	},
 	{
 		tag: "UI · Design System",
-		name: "Sponte: Design System & Component Library",
-		desc: "Scalable component library to standardize UI development and accelerate delivery across applications.",
+		name: "Brand new Design System & Component Library",
+		desc: "Scalable component library to standardize UI development and accelerate delivery across applications, with reusable components (lists, loaders, skeletons, feedback states) built on standardized visual and interaction patterns with accessibility in mind, and a structure that handles every UI state: loading, empty, error, and success.",
 		techs: [
 			{ icon: "react", label: "React" },
 			{ icon: "typescript", label: "TypeScript" },
 			{ icon: "storybook", label: "Storybook" },
 			{ icon: "styledcomponents", label: "Styled Components" },
-		],
-		contributions: [
-			"Reusable UI components: lists, loaders, skeletons, feedback states",
-			"Standardized visual and interaction patterns with accessibility in mind",
-			"Scalable structure handling all UI states: loading, empty, error, success",
 		],
 		highlight:
 			"Strong focus on UX states and component scalability, thinking beyond visuals.",
@@ -65,7 +52,7 @@ const projects = [
 	{
 		tag: "Real-Time · Infrastructure",
 		name: "Real-Time Monitoring Platform",
-		desc: "Home security platform with live WebSocket updates, used by 100+ concurrent call-center agents monitoring doors, gates, and alarm status in real time.",
+		desc: "Home security platform with live WebSocket updates, used by 100+ concurrent call-center agents monitoring doors, gates, and alarm status in real time. Built a real-time UI with live status for multiple devices, responsive dashboards for continuous monitoring, and stable connections under high-frequency updates.",
 		techs: [
 			{ icon: "react", label: "React" },
 			{ icon: "nextjs", label: "Next.js" },
@@ -73,31 +60,20 @@ const projects = [
 			{ icon: "nodejs", label: "Node.js" },
 			{ icon: "redis", label: "Redis" },
 		],
-		contributions: [
-			"Real-time UI powered by WebSockets with live status for multiple devices",
-			"Responsive dashboards designed for continuous monitoring",
-			"Maintained connection stability under high-frequency updates per minute",
-		],
 		highlight:
 			"Used by 100+ concurrent call-center agents handling high-frequency updates per minute.",
 		categories: ["Websockets", "Frontend"],
 	},
 	{
 		tag: "AI · Governance",
-		name: "Atlas Governance: AI-Powered Meeting Platform",
-		desc: "Corporate governance platform for managing assemblies, discussions, and voting, enhanced with AI for communication and decision-making.",
+		name: "AI-Powered Meeting Platform",
+		desc: "Corporate governance platform for managing assemblies, discussions, and voting, enhanced with AI for real-time transcription, summarization, and translation. Includes a meeting assistant with AI listening and live chat, a full video call system integrated alongside the AI and chat layers, and a PDF-to-assembly generation feature that auto-extracts shareholder meeting data.",
 		techs: [
 			{ icon: "react", label: "React" },
 			{ icon: "reactnative", label: "React Native" },
 			{ icon: "websockets", label: "WebSockets" },
 			{ icon: "openai", label: "OpenAI API" },
 			{ icon: "zoomsdk", label: "Zoom SDK" },
-		],
-		contributions: [
-			"AI integration for real-time transcription, summarization, and translation",
-			"Meeting assistant with AI listening and live chat interaction",
-			"Full video call system integration alongside AI and chat layers",
-			"Built a PDF-to-assembly generation feature, auto-extracting shareholder meeting data",
 		],
 		highlight:
 			"70% faster registration for complex assemblies, by automating assembly creation from PDF documents.",
@@ -106,17 +82,12 @@ const projects = [
 	},
 	{
 		tag: "Performance · Frontend",
-		name: "Atlas Governance: Frontend Performance",
-		desc: "Bundle size audit and cleanup for the platform's core Vite application, targeting load performance.",
+		name: "Frontend Performance",
+		desc: "Bundle size audit and cleanup for the platform's core Vite application, targeting load performance. Audited and removed barrel-file re-exports across the codebase, re-structured module imports to enable proper tree-shaking, and validated the gains with bundle analysis before and after the change.",
 		techs: [
 			{ icon: "react", label: "React" },
 			{ icon: "vite", label: "Vite" },
 			{ icon: "performance", label: "Performance" },
-		],
-		contributions: [
-			"Audited and removed barrel-file re-exports across the codebase",
-			"Re-structured module imports to enable proper tree-shaking",
-			"Validated gains with bundle analysis before and after the change",
 		],
 		highlight: "50% smaller production bundle after removing barrel files.",
 		categories: ["Frontend"],
@@ -124,16 +95,11 @@ const projects = [
 	{
 		tag: "AI · Veterinary · Desktop",
 		name: "Ultrasound Report Reader",
-		desc: "Desktop app that reads veterinary ultrasound images and extracts structured metrics (measurements, tissue observations, diagnostic notes), then exports a clean report.",
+		desc: "Desktop app that reads veterinary ultrasound images and extracts structured metrics (measurements, tissue observations, diagnostic notes), then exports a clean report. Built with Electron for local file processing and OpenAI Vision API integration with structured prompt engineering, automating extraction into an exportable report.",
 		techs: [
 			{ icon: "electron", label: "Electron" },
 			{ icon: "javascript", label: "JavaScript" },
 			{ icon: "openai", label: "OpenAI API" },
-		],
-		contributions: [
-			"OpenAI Vision API integration with structured prompt engineering",
-			"Desktop interface built with Electron for local file processing",
-			"Automated extraction and exportable structured report output",
 		],
 		highlight:
 			"Combination of desktop development and document intelligence for veterinary use.",
@@ -142,15 +108,11 @@ const projects = [
 	{
 		tag: "Personal · Mobile",
 		name: "Finance App",
-		desc: "Personal project for tracking personal income, expenses, and budgets.",
+		desc: "Personal project for tracking income, expenses, and budgets in a single mobile app, built end-to-end from design to release.",
 		techs: [
 			{ icon: "flutter", label: "Flutter" },
 			{ icon: "dart", label: "Dart" },
 			{ icon: "uidesign", label: "UI/UX Design" },
-		],
-		contributions: [
-			"Income, expense, and budget tracking in a single mobile app",
-			"Built end-to-end as a personal project, from design to release",
 		],
 		highlight:
 			"First personal project built with Flutter, outside of the usual JS/TS stack.",
@@ -158,32 +120,12 @@ const projects = [
 		screenshots: [grana1, grana2],
 	},
 	{
-		tag: "UX/UI · Product Design",
-		name: "Soccer Simulator",
-		desc: "UI/UX concept for a football club management simulator: squad management, match center, standings, and player detail views.",
-		techs: [{ icon: "uidesign", label: "UI/UX Design" }],
-		contributions: [
-			"Designed a dense data-heavy squad screen that stays readable at a glance",
-			"Built a player detail panel surfacing stats, contract, and traits without overwhelming the layout",
-			"Established a consistent visual language across squad, calendar, standings, and top scorers views",
-		],
-		highlight:
-			"A design-only concept exploring how to make a stats-heavy sports management UI feel clean instead of cluttered.",
-		categories: ["UX/UI"],
-		screenshots: [futSimulator1, futSimulator2, futSimulator3],
-	},
-	{
 		tag: "Desktop · Cross-Platform",
 		name: "Windows game port to macOS",
-		desc: "Ported the Windows-only game to run natively on macOS, without relying on Windows emulation.",
+		desc: "Ported the Windows-only game to run natively on macOS, without relying on Windows emulation. Diagnosed a Java environment check that only validated Windows-style paths, then built a cross-platform runtime handler that checks macOS install locations and PATH before falling back to the original Windows logic, adapting launch and file-handling so the game runs natively.",
 		techs: [
 			{ icon: "java", label: "Java" },
 			{ icon: "macos", label: "macOS" },
-		],
-		contributions: [
-			"Diagnosed a Java environment check that only validated Windows-style paths, causing the app to fail to launch on macOS",
-			"Built a cross-platform Java runtime handler that checks macOS install locations and PATH before falling back to the original Windows logic",
-			"Adapted launch and file-handling logic so the game runs natively on macOS",
 		],
 		highlight:
 			"Unblocked a Windows-only desktop game to run natively on macOS by replacing a hardcoded Windows-path check with a portable Java runtime handler.",
@@ -304,12 +246,6 @@ function handleKeydown(e) {
           <span class="tag"><span class="tag-icon">{@html skillIcons[tech.icon]}</span>{tech.label}</span>
         {/each}
       </div>
-      <ul class="contributions">
-        {#each project.contributions as line}
-          <li>{line}</li>
-        {/each}
-      </ul>
-      <p class="highlight">{project.highlight}</p>
     </article>
     {#if i < filteredProjects.length - 1}
       <div class="divider"></div>
@@ -411,6 +347,7 @@ function handleKeydown(e) {
   flex-direction: column;
   gap: 0.65rem;
   padding: 0.25rem 0 1.1rem 0;
+  margin-bottom: 20px;
 }
 
 .card-overlay-link {
@@ -515,30 +452,6 @@ function handleKeydown(e) {
 .tag-icon :global(svg) {
   width: 100%;
   height: 100%;
-}
-
-/* Contributions */
-.contributions {
-  margin: 0;
-  padding-left: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.contributions li {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.88rem;
-  color: var(--color-text-secondary);
-  line-height: 1.45;
-}
-
-/* Highlight */
-.highlight {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
-  font-style: italic;
-  margin: 0;
 }
 
 /* Divider */

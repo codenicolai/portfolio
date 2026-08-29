@@ -102,16 +102,14 @@ import Seo from "$lib/components/Seo.svelte";
 
     <article class="event">
       <div class="event-header">
+        <span class="event-logo">
+          <img src="{base}/logos/tdc.png" alt="TDC logo" />
+        </span>
         <h3 class="event-title">TDC Innovation — Florianópolis</h3>
-        <p class="event-date">2025</p>
+        <p class="event-date">2023</p>
       </div>
 
       <p class="body-text">Attended TDC Innovation in Florianópolis, one of the largest developer conferences in Brazil.</p>
-
-      <figure class="photo">
-        <img src="{base}/TDC_2.JPG" alt="TDC Innovation — Premium badge" />
-        <figcaption>Leonardo Nicolai  #THEDEVCONF</figcaption>
-      </figure>
     </article>
   </section>
 </main>
@@ -243,8 +241,28 @@ import Seo from "$lib/components/Seo.svelte";
 .event-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.event-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.event-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .event-title {
@@ -270,28 +288,4 @@ import Seo from "$lib/components/Seo.svelte";
   margin: 0;
 }
 
-/* Medium-style photo */
-.photo {
-  margin: 0.75rem 0 0 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.photo img {
-  width: 100%;
-  max-height: 480px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-  box-shadow: 0 4px 24px var(--color-img-shadow);
-}
-
-.photo figcaption {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
-  text-align: center;
-}
 </style>
