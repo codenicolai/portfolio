@@ -1,11 +1,38 @@
 <script>
 import { base } from "$app/paths";
 import Seo from "$lib/components/Seo.svelte";
+
+const certifications = [
+	{
+		name: "Claude Certified",
+		issuer: "Anthropic",
+		description:
+			"Certified on building and integrating with Claude, Anthropic's AI models.",
+		logo: "anthropic.svg",
+		url: "https://academy.claude.com/verify/84ba4a0b1492a85d3033c71e86aaf478",
+	},
+	{
+		name: "English C1 Advanced",
+		issuer: "EF SET",
+		description:
+			"C1 (Advanced) English proficiency, certified by the EF SET English Certificate.",
+		logo: "efset.svg",
+		url: "https://cert.efset.org/pt/4w9K8g",
+	},
+	{
+		name: "Gestão eficaz de projetos e equipes",
+		issuer: "Santander Open Academy",
+		description:
+			"Project and team management course by Santander Open Academy.",
+		logo: "santander.png",
+		url: null,
+	},
+];
 </script>
 
 <Seo
   title="Career & XP"
-  description="Career timeline, roles, and experience of Leonardo Nicolai, from intern to Technical Lead."
+  description="Career timeline, roles, experience, education, and certifications of Leonardo Nicolai, from intern to Technical Lead."
   path="/career-and-xp"
 />
 
@@ -93,6 +120,45 @@ import Seo from "$lib/components/Seo.svelte";
           <p class="timeline-desc">Helped build a PWA UI, added a GraphQL integration to an existing API, and wrote unit and integration tests.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+      <div class="timeline-item last">
+        <a class="timeline-logo" href="https://www.utfpr.edu.br" target="_blank" rel="noopener noreferrer" aria-label="UTFPR website">
+          <img src="{base}/logos/utfpr.svg" alt="UTFPR logo" />
+        </a>
+        <div class="timeline-body">
+          <div class="timeline-header">
+            <span class="company">UTFPR</span>
+            <span class="role">Bachelor's Degree in Computer Science</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section">
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-list">
+      {#each certifications as cert}
+        <svelte:element this={cert.url ? "a" : "div"} class="cert-row" href={cert.url} target={cert.url ? "_blank" : undefined} rel={cert.url ? "noopener noreferrer" : undefined}>
+          <span class="cert-logo">
+            <img src="{base}/logos/{cert.logo}" alt="{cert.issuer} logo" />
+          </span>
+          <span class="cert-info">
+            <span class="cert-header">
+              <span class="cert-name">{cert.name}</span>
+              <span class="cert-issuer">{cert.issuer}</span>
+            </span>
+            <span class="cert-description">{cert.description}</span>
+          </span>
+        </svelte:element>
+      {/each}
     </div>
   </section>
 
@@ -229,6 +295,70 @@ import Seo from "$lib/components/Seo.svelte";
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
+}
+
+/* Certifications */
+.cert-list {
+  display: flex;
+  flex-direction: column;
+}
+.cert-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 0;
+  text-decoration: none;
+}
+a.cert-row {
+  cursor: pointer;
+}
+.cert-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.cert-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.cert-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.cert-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  line-height: 1.3;
+}
+.cert-issuer {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+.cert-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
 }
 
 /* Events */
