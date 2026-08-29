@@ -19,39 +19,41 @@
 		</script>
 		
 		<link href="/_app/immutable/assets/0.CRxu39hj.css" rel="stylesheet">
-		<link href="/_app/immutable/assets/11.DvtqvYYc.css" rel="stylesheet">
-		<link rel="modulepreload" href="/_app/immutable/entry/start.CC821Rvz.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/DseBohhy.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/CHVWXUp4.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/_w6uZTcU.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.U1kmq0FD.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/Di2zYRcX.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/BLHsZZF5.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/CLM45ikz.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/0.C8alaih3.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/DDetEnaw.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/BwhcOVn4.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/Bu93Vllf.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/11.BH7DpwRT.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/BCs6trMq.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/_app/immutable/assets/favicon.DlsIElkM.png"/><!---->
+		<link href="/_app/immutable/assets/12.DvtqvYYc.css" rel="stylesheet">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.DsfFyYYn.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/B3ZD-apt.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/CZTDfgws.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/qLDcXLeM.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.BWVEhmSj.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/Dp8P1QWF.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/BVE9ceWD.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/IlwYdEp4.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/CyUTiQYM.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/BFlDtO7w.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/0.BHfJWanB.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/Dj4Ab-dW.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/Cuf-KRm5.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/12.A-1PzmCh.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/DTXcQHuv.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/DMpHZy27.js"><!--12qhfyh--><link rel="icon" type="image/png" href="/_app/immutable/assets/favicon.DlsIElkM.png"/><!----><!--gsrl61--><meta name="description" content="How Leonardo Nicolai paired with Claude to build a launcher abstraction that got a Windows-only Java game running natively on macOS."/> <link rel="canonical" href="https://codenicolai.github.io/thoughts/game-mac-port"/> <!--[!--><!--]--> <meta property="og:type" content="article"/> <meta property="og:site_name" content="Leonardo Nicolai"/> <meta property="og:title" content="I ported a Windows game to Mac using Claude — Leonardo Nicolai"/> <meta property="og:description" content="How Leonardo Nicolai paired with Claude to build a launcher abstraction that got a Windows-only Java game running natively on macOS."/> <meta property="og:url" content="https://codenicolai.github.io/thoughts/game-mac-port"/> <meta property="og:image" content="https://codenicolai.github.io/github_photo.png"/> <meta name="twitter:card" content="summary_large_image"/> <meta name="twitter:title" content="I ported a Windows game to Mac using Claude — Leonardo Nicolai"/> <meta name="twitter:description" content="How Leonardo Nicolai paired with Claude to build a launcher abstraction that got a Windows-only Java game running natively on macOS."/> <meta name="twitter:image" content="https://codenicolai.github.io/github_photo.png"/><!----><title>I ported a Windows game to Mac using Claude — Leonardo Nicolai</title>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><span class="icon-coin svelte-12qhfyh" style="transform: rotateY(0deg)"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></span></button> <a class="navbar-avatar svelte-12qhfyh" href="/contact-me" title="Contact me"><img src="/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><main class="detail-container svelte-12dtphq"><a href="/thoughts" class="back-link svelte-12dtphq"><svg class="back-icon svelte-12dtphq" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-12dtphq">AI · Mac</span> <h1 class="post-title svelte-12dtphq">I ported a Windows game to Mac using Claude</h1> <p class="post-date svelte-12dtphq">August 21, 2026</p> <p class="post-body svelte-12dtphq">Brasfoot, a lightweight Java-based Brazilian football manager game, only ever ran on Windows. It looks for Java through Windows-specific paths, which tools like GPTK and Crossover couldn't fake. So I paired with Claude to build a small abstraction layer that launches it properly on Mac.</p> <p class="post-body svelte-12dtphq">We worked through error logs together, iterating on the launcher until the game booted. Took about an hour, and it was a good reminder that AI pair programming is useful well beyond typical web app work.</p> <p class="post-body svelte-12dtphq"><a href="https://www.tabnews.com.br/nicolaileo/fiz-um-port-do-brasfoot-para-mac-usando-o-claude" target="_blank" rel="noopener noreferrer" class="post-link svelte-12dtphq">Read the original post →</a></p></main><!----><!----> <footer class="footer svelte-12qhfyh">© 2022 Leonardo Nicolai</footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+		<div style="display: contents"><!--[--><!--[--><!----><nav class="navbar svelte-12qhfyh"><button class="theme-toggle svelte-12qhfyh" aria-label="Toggle theme"><span class="icon-coin svelte-12qhfyh" style="transform: rotateY(0deg)"><!--[!--><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svelte-12qhfyh"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></span></button> <a class="navbar-avatar svelte-12qhfyh" href="/contact-me" title="Contact me"><img src="/_app/immutable/assets/avatar.CKj9BhB0.png" alt="Avatar" class="svelte-12qhfyh"/></a></nav> <!----><!----> <main class="detail-container svelte-12dtphq"><a href="/thoughts" class="back-link svelte-12dtphq"><svg class="back-icon svelte-12dtphq" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"></path></svg> back</a> <span class="post-tag svelte-12dtphq">AI · Mac</span> <h1 class="post-title svelte-12dtphq">I ported a Windows game to Mac using Claude</h1> <p class="post-date svelte-12dtphq">August 21, 2026</p> <p class="post-body svelte-12dtphq">Brasfoot, a lightweight Java-based Brazilian football manager game, only ever ran on Windows. It looks for Java through Windows-specific paths, which tools like GPTK and Crossover couldn't fake. So I paired with Claude to build a small abstraction layer that launches it properly on Mac.</p> <p class="post-body svelte-12dtphq">We worked through error logs together, iterating on the launcher until the game booted. Took about an hour, and it was a good reminder that AI pair programming is useful well beyond typical web app work.</p> <p class="post-body svelte-12dtphq"><a href="https://www.tabnews.com.br/nicolaileo/fiz-um-port-do-brasfoot-para-mac-usando-o-claude" target="_blank" rel="noopener noreferrer" class="post-link svelte-12dtphq">Read the original post →</a></p></main><!----><!----> <footer class="footer svelte-12qhfyh">© 2022 Leonardo Nicolai</footer><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_72ed1 = {
+					__sveltekit_ldnz5f = {
 						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.CC821Rvz.js"),
-						import("/_app/immutable/entry/app.U1kmq0FD.js")
+						import("/_app/immutable/entry/start.DsfFyYYn.js"),
+						import("/_app/immutable/entry/app.BWVEhmSj.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 11],
+							node_ids: [0, 12],
 							data: [null,null],
 							form: null,
 							error: null
