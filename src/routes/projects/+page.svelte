@@ -208,7 +208,7 @@ function handleKeydown(e) {
   </div>
 
   {#each filteredProjects as project, i}
-    <article class="project">
+    <article class="project" class:has-gallery={project.screenshots}>
       {#if project.screenshots}
         <button
           type="button"
@@ -348,6 +348,14 @@ function handleKeydown(e) {
   gap: 0.65rem;
   padding: 0.25rem 0 1.1rem 0;
   margin-bottom: 20px;
+}
+
+.project.has-gallery {
+  transition: transform 0.38s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.project.has-gallery:hover {
+  transform: scale(1.01);
 }
 
 .card-overlay-link {
